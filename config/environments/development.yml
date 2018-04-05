@@ -1,0 +1,37 @@
+secret_key_base: g8xVU-_MgE1aeAL7aqTRHaP9iWm5RZ4S68MkZH7FkIk
+port: 3000
+name: nocturne
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+  skip:
+    -
+  context:
+    - request
+    - session
+    - headers
+    - cookies
+    - params
+
+host: 0.0.0.0
+port_reuse: true
+process_count: 1
+# ssl_key_file:
+# ssl_cert_file:
+redis_url: "redis://localhost:6379"
+database_url: postgres://postgres:@localhost:5432/nocturne_development
+session:
+  key: amber.session
+  store: signed_cookie
+  expires: 0
+
+smtp:
+  enabled: false
+
+
+secrets:
+  description: Store your development secrets credentials and settings here.
+

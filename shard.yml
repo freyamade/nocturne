@@ -1,0 +1,47 @@
+name: nocturne
+version: 0.1.0
+
+authors:
+  - Ciaran Broderick <broderickciaran@gmail.com>
+
+crystal: 0.24.2
+
+license: UNLICENSED
+
+targets:
+  nocturne:
+    main: src/nocturne.cr
+
+  amber:
+    main: lib/amber/src/amber/cli.cr
+
+dependencies:
+  amber:
+    github: amberframework/amber
+    version: 0.7.2
+    #branch: master
+
+  citrine-i18n:
+    github: amberframework/citrine-i18n
+    version: 0.1.0
+
+  granite_orm:
+    github: amberframework/granite-orm
+    version: ~> 0.8.4
+
+  quartz_mailer:
+    github: amberframework/quartz-mailer
+    version: ~> 0.5.1
+
+  jasper_helpers:
+    github: amberframework/jasper-helpers
+    version: ~> 0.2.0
+
+  pg:
+    github: will/crystal-pg
+    version: ~> 0.14.1
+
+development_dependencies:
+  garnet_spec:
+    github: amberframework/garnet-spec
+    version: ~> 0.1.1
