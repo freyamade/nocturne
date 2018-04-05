@@ -21,14 +21,13 @@ require "../src/controllers/**"
 # this file, we recommend to use yaml configurations before changing any settings here.
 # Any uncommented setting here will override the YAML with the value set here.
 
-
 Amber::Server.configure do |settings|
   # Use your environment variables settings here.
   #
   # Name: A name that identifies this application. This is not internally
   # used by the framework.
   #
-  # settings.name = "Nocturne web application."
+  settings.name = "Nocturne Village Manager."
   #
   #
   # Colorize Logging: specifies whether or not to use ANSI color codes
