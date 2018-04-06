@@ -7,6 +7,7 @@ class ApplicationController < Amber::Controller::Base
   def current_user
     context.current_user
   end
+
   def signed_in?
     current_user ? true : false
   end
@@ -17,5 +18,4 @@ class ApplicationController < Amber::Controller::Base
       redirect_to "/signin"
     end
   end
-
 end
