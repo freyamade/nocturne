@@ -17,9 +17,7 @@ html
         - flash.each do |key, value|
           div class="card alert-#{key}"
             div.card-content.white-text
-              p
-                b = "#{key.to_s.upcase}:"
-                = value
+              p = value
       div.row
         div.col-sm-12.main
           == content
