@@ -42,6 +42,7 @@ Amber::Server.configure do |app|
   # Admin Panel Routes
   routes :web, "/admin" do
     get "/", AdminController, :index
+    # Models
     get "/models/buildqueue/", BuildQueueAdminController, :index
     get "/models/building/", BuildingAdminController, :index
     get "/models/crafter/", CrafterAdminController, :index
@@ -49,6 +50,14 @@ Amber::Server.configure do |app|
     get "/models/resource/", ResourceAdminController, :index
     get "/models/village/", VillageAdminController, :index
     get "/models/villager/", VillagerAdminController, :index
+    # Relations
+    get "/relations/buildqueuebuilding/", BuildQueueBuildingAdminController, :index
+    get "/relations/buildingfurnishing/", BuildingFurnishingAdminController, :index
+    get "/relations/buildingresource/", BuildingResourceAdminController, :index
+    get "/relations/requiredcrafter/", RequiredCrafterAdminController, :index
+    get "/relations/residingcrafter/", ResidingCrafterAdminController, :index
+    get "/relations/resourcestore/", ResourceStoreAdminController, :index
+    get "/relations/villagebuilding/", VillageBuildingAdminController, :index
   end
 
   routes :web, "/json" do
