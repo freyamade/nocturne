@@ -14,6 +14,10 @@ class AdminBaseController < ApplicationController
     end
   end
 
+  private def nocturne_id
+    return Village.find_by(:name, "Nocturne").not_nil!.id.not_nil!
+  end
+
   before_action do
     all { redirect_non_admin }
   end
