@@ -42,6 +42,8 @@ Amber::Server.configure do |app|
   # Admin Panel Routes
   routes :web, "/admin" do
     get "/", AdminController, :index
+    get "/models/:index", AdminController, :model
+    get "/relations/:index", AdminController, :relation
   end
 
   routes :web, "/json" do
