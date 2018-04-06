@@ -11,7 +11,7 @@ html
 
   body
     div.container-fluid
-      == render(partial: "layouts/_nav.slang")
+      == render(partial: "layouts/_admin_nav.slang")
     div.container
       div.row
         - flash.each do |key, value|

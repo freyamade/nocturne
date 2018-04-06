@@ -1,6 +1,10 @@
-/*
- * Globals
- */
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body, .full-height {
+  height: 100%; }
+
 body {
   font-family: "Lato", serif; }
 
@@ -21,5 +25,12 @@ nav .brand-logo {
 
 .card.alert-info {
   background-color: #039be5; }
+
+.tabs .indicator {
+  background-color: #1a237e; }
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+  background-color: rgba(26, 35, 126, 0.2);
+  outline: none; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmJ1bmRsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

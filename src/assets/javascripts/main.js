@@ -20,4 +20,8 @@ if (!Date.prototype.toGranite) {
     };
 
   }());
+
+  $(document).ready(() => {
+    $('.tabs').tabs();
+  });
 }
