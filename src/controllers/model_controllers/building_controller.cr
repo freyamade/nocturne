@@ -1,6 +1,8 @@
 class BuildingAdminController < AdminBaseController
   def index
-    "Building Admin Page"
+    model_name = "Building"
+    instances = Building.all
+    render "admin/instance_list.slang"
   end
 end
 
