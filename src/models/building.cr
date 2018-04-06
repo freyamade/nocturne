@@ -17,4 +17,8 @@ class Building < Granite::ORM::Base
   field population : Int32
   field description : String
   timestamps
+
+  def to_s
+    "#{self.name.not_nil!} (Level #{self.level.not_nil!})"
+  end
 end
