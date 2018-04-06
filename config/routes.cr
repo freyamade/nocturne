@@ -39,6 +39,11 @@ Amber::Server.configure do |app|
     # Nocturne stuff
   end
 
+  # Admin Panel Routes
+  routes :web, "/admin" do
+    get "/", AdminController, :index
+  end
+
   routes :web, "/json" do
     # JSON routes for the API, might as well test it out
     get "/", VillageController, :json_index
