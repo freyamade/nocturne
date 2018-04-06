@@ -33,4 +33,9 @@ nav .brand-logo {
   background-color: rgba(26, 35, 126, 0.2);
   outline: none; }
 
+.fixed-action-button {
+  position: fixed;
+  right: 56px;
+  bottom: 56px; }
+
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmJ1bmRsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

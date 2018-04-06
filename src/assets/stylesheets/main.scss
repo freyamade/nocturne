@@ -44,6 +44,13 @@ nav .brand-logo {
 }
 
 .tabs .tab a:focus, .tabs .tab a:focus.active {
-    background-color: rgba(26, 35, 126, 0.2);
-    outline: none;
+  background-color: rgba(26, 35, 126, 0.2);
+  outline: none;
+}
+
+// Fixed action button
+.fixed-action-button {
+  position: fixed;
+  right: 56px;
+  bottom: 56px;
 }
