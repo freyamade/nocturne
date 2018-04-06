@@ -1,0 +1,15 @@
+class BuildQueue < Granite::ORM::Base
+  adapter pg
+  table_name build_queues
+
+  # Each buildqueue is for one village only
+  belongs_to :village
+  has_many :build_queue_buildings
+
+  # id : Int64 primary key is created for you
+  timestamps
+
+  def to_s
+    puts "Build Queue for #{village.name}"
+  end
+end
