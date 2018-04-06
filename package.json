@@ -4,7 +4,7 @@
   "description": "Nocturne with Amber",
   "private": true,
   "author": "Ciaran Broderick",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --config config/webpack/development.js",
     "watch": "webpack -w --config config/webpack/development.js",
