@@ -7,6 +7,23 @@ class ResourceStore < Granite::ORM::Base
   belongs_to :village
 
   field count : Int64
+
+  def ResourceStore.get_data_for_village(village_id : Int64)
+    # For a given village, returns a hash of all the resources and their counts
+    # Get all ResourceStore elements relating to the passed village
+    data = [] of Hash(Symbol, Union(String | Int64))
+    ResourceStore.find_each("WHERE village_id = ?", [village_id]) do |resource_store|
+      resource_data = resource_store.resource.to_hash
+      new_data = {} of Symbol => Union(String | Int64)
+      resource_data.each do |k, v|
+        new_data[k] = v
+      end
+      new_data[:count] = resource_store.count.not_nil!
+      new_data[:id] = resource_store.resource.id.not_nil!
+      data << new_data
+    end
+    data
+  end
 end
 
 class BuildingResource < Granite::ORM::Base

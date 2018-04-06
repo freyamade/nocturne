@@ -10,4 +10,16 @@ class Resource < Granite::ORM::Base
   field name : String
   field icon : String
   timestamps
+
+  def to_hash
+    data = {} of Symbol => String
+    icon = self.icon
+    if !icon
+      icon = ""
+    end
+    data = {
+      :name => self.name.not_nil!,
+      :icon => icon,
+    }
+  end
 end
