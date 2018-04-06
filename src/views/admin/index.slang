@@ -1,4 +1,4 @@
-div.s12
+div.col.s12
   div.card.z-index-5
     div.card-tabs
       ul.tabs.tabs-fixed-width
