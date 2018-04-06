@@ -12,7 +12,7 @@ class Building < Granite::ORM::Base
   # id : Int64 primary key is created for you
   field name : String
   field level : Int32
-  field build_time : Int32
+  field build_time : Int32 # Build time will be stored as minutes, displayed as hours
   field unique_per_village : Bool
   field population : Int32
   field description : String

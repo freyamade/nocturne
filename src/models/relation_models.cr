@@ -42,7 +42,7 @@ class BuildingFurnishing < Granite::ORM::Base
   field count : Int64
 end
 
-class RequiredCrafters < Granite::ORM::Base
+class RequiredCrafter < Granite::ORM::Base
   # Keeps track of which Crafters are required to build each Building
   adapter pg
   table_name required_crafters
@@ -51,10 +51,10 @@ class RequiredCrafters < Granite::ORM::Base
   belongs_to :crafter
 end
 
-class ResidingCrafters < Granite::ORM::Base
+class ResidingCrafter < Granite::ORM::Base
   # Keeps track of which Crafters live in a Village
   adapter pg
-  table_name residing_artisans
+  table_name residing_crafters
 
   belongs_to :village
   belongs_to :crafter
@@ -62,7 +62,7 @@ class ResidingCrafters < Granite::ORM::Base
   field name : String
 end
 
-class BuildQueueBuildings < Granite::ORM::Base
+class BuildQueueBuilding < Granite::ORM::Base
   # Keeps track of the Buildings in a Village's BuildQueue
   adapter pg
   table_name build_queue_buildings
