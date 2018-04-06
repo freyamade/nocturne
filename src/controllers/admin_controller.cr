@@ -1,23 +1,5 @@
-class AdminController < ApplicationController
+class AdminBaseController < ApplicationController
   LAYOUT = "admin_application.slang"
-  @@models = [
-    BuildQueue,
-    Building,
-    Crafter,
-    Furnishing,
-    Resource,
-    Village,
-    Villager,
-  ]
-  @@relations = [
-    BuildQueueBuilding,
-    BuildingFurnishing,
-    BuildingResource,
-    RequiredCrafter,
-    ResidingCrafter,
-    ResourceStore,
-    VillageBuilding,
-  ]
 
   private def redirect_non_admin
     if !signed_in?
@@ -35,23 +17,31 @@ class AdminController < ApplicationController
   before_action do
     all { redirect_non_admin }
   end
+end
 
+class AdminController < AdminBaseController
   def index
     # Index should display a list of the Models and links to their individual pages
     # As well as a view for the activity log
-    models = @@models
-    relations = @@relations
+    models = [
+      BuildQueue,
+      Building,
+      Crafter,
+      Furnishing,
+      Resource,
+      Village,
+      Villager,
+    ]
+    relations = [
+      BuildQueueBuilding,
+      BuildingFurnishing,
+      BuildingResource,
+      RequiredCrafter,
+      ResidingCrafter,
+      ResourceStore,
+      VillageBuilding,
+    ]
     activities = ActivityLog.all("ORDER BY created_at DESC")
     render("index.slang")
-  end
-
-  def model
-    index = params[:index].to_i
-    @@models[index].name
-  end
-
-  def relation
-    index = params[:index].to_i
-    @@relations[index].name
   end
 end

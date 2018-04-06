@@ -13,20 +13,20 @@ div.s12
         ul.collection.with-header
           li.collection-header
             h4 = "Models"
-          - models.each_with_index do |model, i|
+          - models.each do |model|
             li.collection-item
               div
                 = model.name
-                a.secondary-content.indigo-text.text-darken-4 href="/admin/models/#{i}"
+                a.secondary-content.indigo-text.text-darken-4 href="/admin/models/#{model.name.downcase}/"
                   i.material-icons
                     | send
           li.collection-header
             h4 = "Relationships"
-          - relations.each_with_index do |model, i|
+          - relations.each do |model|
             li.collection-item
               div
                 = model.name
-                a.secondary-content.indigo-text.text-darken-4 href="/admin/relations/#{i}"
+                a.secondary-content.indigo-text.text-darken-4 href="/admin/relations/#{model.name.downcase}/"
                   i.material-icons
                     | send
 
