@@ -1,6 +1,6 @@
 nav.indigo.darken-4
   div.nav-wrapper
-    a.brand-logo href="#"
+    a.brand-logo href="/"
       | Nocturne
     ul#nav-mobile.right.hide-on-med-and-down
       li
