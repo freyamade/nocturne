@@ -19,7 +19,7 @@ html
             div.card-content.white-text
               p = value
       div.row
-        div.col-sm-12.main
+        div.col.s12.main
           == content
 
     script src="https://code.jquery.com/jquery-3.3.1.min.js"
