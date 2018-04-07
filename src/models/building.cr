@@ -19,6 +19,23 @@ class Building < Granite::ORM::Base
   timestamps
 
   def to_s
-    "#{self.name.not_nil!} (Level #{self.level.not_nil!})"
+    "#{self.name.not_nil!} (Level #{self.level.not_nil!}). Pop: #{self.population.not_nil!}"
   end
+
+  # Validation methods
+  validate(:name, "parameter is required.", ->(building : self) {
+    (building != nil && building.name != "")
+  })
+  validate(:level, "parameter is required, and should be in the range 1 -> 10.", ->(building : self) {
+    (building != nil && building.level != "" && building.level.not_nil!.to_i.between? 1..10)
+  })
+  validate(:build_time, "parameter is required, and should be at least 30.", ->(building : self) {
+    (building != nil && building.build_time != "" && building.build_time.not_nil!.to_i >= 30)
+  })
+  validate(:population, "parameter is required.", ->(building : self) {
+    (building != nil && building.population != "")
+  })
+  validate(:description, "parameter is required.", ->(building : self) {
+    (building != nil && building.description != "")
+  })
 end
