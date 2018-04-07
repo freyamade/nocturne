@@ -45,6 +45,8 @@ Amber::Server.configure do |app|
     # Models
     get "/models/buildqueue/", BuildQueueAdminController, :index
     get "/models/building/", BuildingAdminController, :index
+    get "/models/building/new/", BuildingAdminController, :new
+    post "/models/building/new/", BuildingAdminController, :create
     get "/models/crafter/", CrafterAdminController, :index
     get "/models/furnishing/", FurnishingAdminController, :index
     get "/models/resource/", ResourceAdminController, :index
