@@ -55,6 +55,7 @@ Amber::Server.configure do |app|
     # Relations
     get "/relations/buildqueuebuilding/", BuildQueueBuildingAdminController, :index
     get "/relations/buildingfurnishing/", BuildingFurnishingAdminController, :index
+    get "/relations/buildingrequirement/", BuildingRequirementAdminController, :index
     get "/relations/buildingresource/", BuildingResourceAdminController, :index
     get "/relations/requiredcrafter/", RequiredCrafterAdminController, :index
     get "/relations/residingcrafter/", ResidingCrafterAdminController, :index

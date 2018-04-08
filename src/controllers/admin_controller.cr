@@ -44,6 +44,7 @@ class AdminController < AdminBaseController
     relations = [
       BuildQueueBuilding,
       BuildingFurnishing,
+      BuildingRequirement,
       BuildingResource,
       RequiredCrafter,
       ResidingCrafter,
