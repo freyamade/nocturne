@@ -13,12 +13,14 @@ class Authenticate < Amber::Pipe::Base
     else
       return call_next(context) if public_path?(context.request.path)
       context.flash[:warning] = "Please Sign In"
-      context.response.headers.add "Location", "/signin"
+      context.response.headers.add "Location", "/signin?next=#{context.request.path}"
       context.response.status_code = 302
     end
   end
 
   private def public_path?(path)
+    # Remove everything after the query string first
+    path = path.split("?")[0]
     PUBLIC_PATHS.includes?(path)
 
     # Different strategies can be used to determine if a path is public
@@ -28,5 +30,4 @@ class Authenticate < Amber::Pipe::Base
     # Example, if only a few private paths exist
     # return false if ["/secret", "/super/secret", "/private"].includes?(path)
   end
-
 end

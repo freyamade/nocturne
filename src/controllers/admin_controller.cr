@@ -4,8 +4,8 @@ class AdminBaseController < ApplicationController
   private def redirect_non_admin
     if !signed_in?
       # Redirect to the login page
-      flash[:info] = "Must be logged in"
-      redirect_to "/signin"
+      flash[:info] = "Please Sign In"
+      redirect_to "/signin/?next=#{request.path}"
     end
     # Check that the user is signed in as a user who is an admin
     # Current user can't be nil at this point as we already redirect non-authenticated requests
@@ -20,6 +20,11 @@ class AdminBaseController < ApplicationController
 
   before_action do
     all { redirect_non_admin }
+  end
+
+  def model_name
+    # Overwrite this function in subclasses to change page title
+    nil
   end
 end
 
