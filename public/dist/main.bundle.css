@@ -53,4 +53,7 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:not(.browser-d
   border-right: 2px solid #1a237e;
   border-bottom: 2px solid #1a237e; }
 
+#logo {
+  vertical-align: text-top; }
+
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmJ1bmRsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

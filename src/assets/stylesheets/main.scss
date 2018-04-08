@@ -74,3 +74,7 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
   border-right: 2px solid #1a237e;
   border-bottom: 2px solid #1a237e;
 }
+
+#logo {
+  vertical-align: text-top;
+}
