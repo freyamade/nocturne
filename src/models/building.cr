@@ -8,6 +8,7 @@ class Building < Granite::ORM::Base
   has_many :building_furnishings
   has_many :craft_skills, through: :required_crafters
   has_many :build_queue_buildings
+  has_many :building_requirements
 
   # id : Int64 primary key is created for you
   field name : String
@@ -19,7 +20,7 @@ class Building < Granite::ORM::Base
   timestamps
 
   def to_s
-    "#{self.name.not_nil!} (Level #{self.level.not_nil!}). Pop: #{self.population.not_nil!}"
+    "#{self.name.not_nil!} (Level #{self.level.not_nil!})"
   end
 
   # Validation methods

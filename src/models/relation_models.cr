@@ -20,6 +20,23 @@ class BuildingFurnishing < Granite::ORM::Base
   field count : Int64
 end
 
+class BuildingRequirement < Granite::ORM::Base
+  # Keeps track of buildings that are required to already exist before a building can be created
+  adapter pg
+  table_name building_requirements
+
+  belongs_to :building
+
+  field required_building_id : Int64
+  field count : Int64
+
+  def to_s
+    # Since the required_lookup isn't done by belongs_to we'll have to do it ourselves
+    required_building = Building.find self.required_building_id
+    "#{self.building.to_s} requires #{self.count} #{required_building.to_s} to be present"
+  end
+end
+
 class BuildingResource < Granite::ORM::Base
   # Keeps track of how many Resources it takes to build each Building type
   adapter pg
