@@ -14,6 +14,9 @@ nav.indigo.darken-4
         - else
           a href="/signin"
             | Sign In
+      - if (current_user && current_user.not_nil!.admin)
+        li
+          a href="/admin" = "Admin Panel"
 
 ul.sidenav#mobile-menu
   li
@@ -23,3 +26,6 @@ ul.sidenav#mobile-menu
     - else
       a href="/signin"
         | Sign In
+  - if (current_user && current_user.not_nil!.admin)
+    li
+      a href="/admin" = "Admin Panel"
