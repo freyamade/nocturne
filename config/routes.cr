@@ -44,13 +44,22 @@ Amber::Server.configure do |app|
     get "/", AdminController, :index
     # Models
     get "/models/buildqueue/", BuildQueueAdminController, :index
+
     get "/models/building/", BuildingAdminController, :index
     get "/models/building/new/", BuildingAdminController, :new
     post "/models/building/new/", BuildingAdminController, :create
+    get "/models/building/:id/", BuildingAdminController, :read
+    put "/models/building/:id/", BuildingAdminController, :update
+    delete "/models/building/:id/", BuildingAdminController, :delete
+
     get "/models/crafter/", CrafterAdminController, :index
+
     get "/models/furnishing/", FurnishingAdminController, :index
+
     get "/models/resource/", ResourceAdminController, :index
+
     get "/models/village/", VillageAdminController, :index
+
     get "/models/villager/", VillagerAdminController, :index
     # Relations
     get "/relations/buildqueuebuilding/", BuildQueueBuildingAdminController, :index

@@ -26,6 +26,18 @@ class AdminBaseController < ApplicationController
     # Overwrite this function in subclasses to change page title
     nil
   end
+
+  def is_read?
+    # Determines from the path whether or not the form displayed is a read/update form
+    path_end = request.path.split("/")[-2]
+    begin
+      # If we can parse it as a number, it's a read request
+      path_end.to_i64
+      true
+    rescue
+      false
+    end
+  end
 end
 
 class AdminController < AdminBaseController
