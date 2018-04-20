@@ -8,7 +8,7 @@ nav.indigo.darken-4
         | menu
     ul#nav-mobile.right.hide-on-med-and-down
       li
-        - if (current_user == context.current_user)
+        - if (current_user && current_user == context.current_user)
           a href="/profile"
             | View Profile
         - else

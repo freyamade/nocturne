@@ -27,7 +27,11 @@ html
                 a.breadcrumb.disabled href="#"
                   = request.path.includes?("models") ? "Models" : "Relations"
                 a.breadcrumb href="../" = "#{model_name}"
-                a.breadcrumb href="#" = "New"
+                a.breadcrumb href="#"
+                - if is_read?
+                  = params[:id]
+                - else
+                  | "New"
 
         div.col.s12
           div.card.z-index-5

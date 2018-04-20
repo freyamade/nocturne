@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       flash[:info] = "Successfully logged in"
       # Check if there's a next query param
-      if request.query_params
+      if request.query_params && request.query_params.has_key? "next"
         redirect_to request.query_params["next"]
       else
         redirect_to "/"
