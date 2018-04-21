@@ -31,7 +31,7 @@ html
                 - if is_read?
                   = params[:id]
                 - else
-                  | "New"
+                  | New
 
         div.col.s12
           div.card.z-index-5
