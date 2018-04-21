@@ -10,6 +10,6 @@ class BuildQueue < Granite::ORM::Base
   timestamps
 
   def to_s
-    puts "Build Queue for #{village.name}"
+    puts "Build Queue for #{village.name} with #{build_queue_buildings.size} items"
   end
 end
