@@ -1,6 +1,7 @@
 # Nocturne
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/crnbrdrck/Nocturne.svg?columns=all)](https://waffle.io/crnbrdrck/Nocturne)
+[![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](https://github.com/crnbrdrck/Nocturne)
 
 I am quite into being a Dungeon Master (DM) for games of Dungeons & Dragons. As such, I come up with stories to tell my players.
 
