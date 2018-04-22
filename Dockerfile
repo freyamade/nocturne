@@ -5,8 +5,8 @@ WORKDIR /app
 COPY . /app
 
 # Set up necessary ENV variables
-# ENV AMBER_ENCRYPTION_KEY "$AMBER_ENCRYPTION_KEY"
-# ENV AMBER_ENV "$PRODUCTION"
+ENV AMBER_ENCRYPTION_KEY "$SECRET_KEY"
+ENV AMBER_ENV "production"
 
 # Install deps
 RUN shards install
