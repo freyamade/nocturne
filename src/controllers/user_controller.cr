@@ -13,7 +13,7 @@ class UserController < ApplicationController
       flash[:success] = "Updated Profile successfully."
       redirect_to "/profile/"
     elsif user
-      flash[:danger] = "Could not update Profile!"
+      flash[:danger] = "Could not update Profile! Please ensure all values are filled and try again!"
       render("show.slang")
     else
       flash[:info] = "Must be logged in"

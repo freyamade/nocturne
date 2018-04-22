@@ -9,23 +9,23 @@ nav.indigo.darken-4
     ul#nav-mobile.right.hide-on-med-and-down
       li
         - if (current_user && current_user == context.current_user)
-          a href="/profile"
+          a href="/profile/"
             | View Profile
         - else
-          a href="/signin"
-            | Sign In
+          a href="/signinup/"
+            | Sign In / Up
       - if (current_user && current_user.not_nil!.admin)
         li
-          a href="/admin" = "Admin Panel"
+          a href="/admin/" = "Admin Panel"
 
 ul.sidenav#mobile-menu
   li
     - if (current_user == context.current_user)
-      a href="/profile"
+      a href="/profile/"
         | View Profile
     - else
-      a href="/signin"
-        | Sign In
+      a href="/signinup/"
+        | Sign In / Up
   - if (current_user && current_user.not_nil!.admin)
     li
-      a href="/admin" = "Admin Panel"
+      a href="/admin/" = "Admin Panel"

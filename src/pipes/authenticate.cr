@@ -3,7 +3,7 @@ class HTTP::Server::Context
 end
 
 class Authenticate < Amber::Pipe::Base
-  PUBLIC_PATHS = ["/", "/signin", "/session", "/signup", "/registration"]
+  PUBLIC_PATHS = ["/", "/session/", "/signinup/", "/registration/"]
 
   def call(context)
     user_id = context.session["user_id"]?
@@ -13,7 +13,7 @@ class Authenticate < Amber::Pipe::Base
     else
       return call_next(context) if public_path?(context.request.path)
       context.flash[:warning] = "Please Sign In"
-      context.response.headers.add "Location", "/signin?next=#{context.request.path}"
+      context.response.headers.add "Location", "/signinup/?next=#{context.request.path}"
       context.response.status_code = 302
     end
   end
