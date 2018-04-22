@@ -29,8 +29,9 @@ class UserController < ApplicationController
 
   private def user_params
     params.validation do
-      required(:email) {|f| !f.nil? && !f.empty? }
-      optional(:password) {|f| !f.nil? && !f.empty? }
+      required(:name) { |f| !f.nil? && !f.empty? }
+      required(:email) { |f| !f.nil? && !f.empty? }
+      optional(:password) { |f| !f.nil? && !f.empty? }
     end
   end
 end
