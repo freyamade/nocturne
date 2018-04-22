@@ -14,7 +14,6 @@ RUN npm install
 
 # Build the binary
 RUN npm run release
-RUN amber db create migrate
 RUN shards build --production --release
 
-CMD ["./bin/nocturne"]
+CMD ["/bin/bash", "cmd.sh"]
