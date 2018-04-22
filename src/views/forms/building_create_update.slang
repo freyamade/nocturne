@@ -20,10 +20,3 @@ div.col.s12
     - else
       input type="checkbox" name="unique_per_village"
     span = "Only 1 per Village"
-  button.btn.waves-effect.waves-light.indigo.darken-4.right type="submit" name="action"
-    - if (is_read?)
-      | Update
-    - else
-      | Create
-    i.material-icons.right
-      | send
