@@ -2,11 +2,18 @@ FROM amberframework/amber:v0.7.2
 
 WORKDIR /app
 
-COPY shard.* /app/
-RUN crystal deps
-
 COPY . /app
 
-RUN rm -rf /app/node_modules
+# Set up necessary ENV variables
+ENV AMBER_ENCRYPTION_KEY "$SECRET_KEY"
+ENV AMBER_ENV "production"
 
-CMD amber watch
+# Install deps
+RUN shards install
+RUN npm install
+
+# Build the binary
+RUN npm run release
+RUN shards build --production --release
+
+CMD ["/bin/bash", "cmd.sh"]
