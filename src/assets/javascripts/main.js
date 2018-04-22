@@ -1,5 +1,7 @@
 import Amber from 'amber'
 
+document.addEventListener('DOMContentLoaded', init, false);
+
 if (!Date.prototype.toGranite) {
   (function() {
 
@@ -20,9 +22,14 @@ if (!Date.prototype.toGranite) {
     };
 
   }());
+}
 
-  $(document).ready(() => {
-    $('.tabs').tabs();
-    $('.sidenav').sidenav();
-  });
+function init() {
+    // Initialise the materialize stuff that needs to be initialised
+    // Get all tab elements on the page and initialise them
+    document.querySelectorAll('.tabs').forEach(e => {
+        M.Tabs.init(e);
+    })
+    // Initialise the sidenav
+    M.Sidenav.init(document.querySelector('.sidenav'));
 }

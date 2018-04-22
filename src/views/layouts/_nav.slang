@@ -20,7 +20,7 @@ nav.indigo.darken-4
 
 ul.sidenav#mobile-menu
   li
-    - if (current_user == context.current_user)
+    - if (current_user && current_user == context.current_user)
       a href="/profile/"
         | View Profile
     - else
