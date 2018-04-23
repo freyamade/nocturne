@@ -15,4 +15,6 @@ RUN npm install
 RUN npm run release
 RUN shards build --production --release
 
+EXPORT 8080
+
 CMD ["/bin/bash", "cmd.sh"]
