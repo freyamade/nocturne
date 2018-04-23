@@ -38,10 +38,10 @@ class AuthController < ApplicationController
     passwords_match = true
     user = User.new(registration_params.validate!)
     # First ensure that passwords match
-    if !params[:password]? || !params[:password_confirm] || params[:password] != params[:password_confirm]
+    if !params[:password]? || !params[:confirm_password] || params[:password] != params[:confirm_password]
       # Display an error
       passwords_match = false
-      user.errors << Granite::ORM::Error.new(:passwords, "do not match")
+      user.errors << Granite::ORM::Error.new(:passwords, "do not match.")
     end
     user.password = params["password"].to_s
     user.admin = false
@@ -58,9 +58,10 @@ class AuthController < ApplicationController
 
   private def registration_params
     params.validation do
+      required(:name) { |f| !f.nil? }
       required(:email) { |f| !f.nil? }
       required(:password) { |f| !f.nil? }
-      required(:password_confirm) { |f| !f.nil? }
+      required(:confirm_password) { |f| !f.nil? }
     end
   end
 end

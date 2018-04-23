@@ -44,7 +44,7 @@ signin_emaildiv.col.s12
             input#password type="password" name="password" autocomplete="new-password"
             label for="password" = "Password"
           div.input-field
-            input#password-confirm type="password" name="password_confirm" autocomplete="new-password"
+            input#password-confirm type="password" name="confirm_password" autocomplete="new-password"
             label for="password-confirm" = "Confirm Password"
           button.btn.waves-effect.waves-light.indigo.darken-4.right type="submit" name="action"
             | Submit

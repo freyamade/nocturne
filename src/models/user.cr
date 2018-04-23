@@ -32,8 +32,16 @@ class User < Granite::ORM::Base
     end
   end
 
-  validate :password, "is too short", ->(user : User) do
+  validate :password, "is too short. Passwords should be at least 8 characters long.", ->(user : User) do
     user.password_changed? ? user.valid_password_size? : true
+  end
+
+  def name=(name)
+    @name = name
+  end
+
+  def name
+    name
   end
 
   def password=(password)
