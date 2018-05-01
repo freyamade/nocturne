@@ -56,4 +56,11 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:not(.browser-d
 #logo {
   vertical-align: text-top; }
 
+.select-wrapper input.select-dropdown {
+  border-bottom: 1px solid #1a237e;
+  color: #1a237e; }
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #1a237e; }
+
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmJ1bmRsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

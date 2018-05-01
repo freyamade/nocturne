@@ -69,7 +69,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
   color: #1a237e;
 }
-//Checkbox
+// Checkbox
 [type="checkbox"]:checked+span:not(.lever):before {
   border-right: 2px solid #1a237e;
   border-bottom: 2px solid #1a237e;
@@ -77,4 +77,12 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
 
 #logo {
   vertical-align: text-top;
+}
+// Select
+.select-wrapper input.select-dropdown {
+  border-bottom: 1px solid #1a237e;
+  color: #1a237e;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #1a237e;
 }
