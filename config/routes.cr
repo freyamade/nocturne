@@ -51,6 +51,7 @@ Amber::Server.configure do |app|
     delete "/models/building/:id/", BuildingAdminController, :delete
 
     get "/models/crafter/", CrafterAdminController, :index
+    get "/models/crafter/new/", CrafterAdminController, :new
 
     get "/models/furnishing/", FurnishingAdminController, :index
 
