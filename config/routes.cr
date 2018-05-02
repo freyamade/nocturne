@@ -41,17 +41,22 @@ Amber::Server.configure do |app|
   routes :web, "/admin" do
     get "/", AdminController, :index
     # Models
+    # Build Queue
     get "/models/buildqueue/", BuildQueueAdminController, :index
-
+    # Building
     get "/models/building/", BuildingAdminController, :index
     get "/models/building/new/", BuildingAdminController, :new
     post "/models/building/new/", BuildingAdminController, :create
     get "/models/building/:id/", BuildingAdminController, :read
     put "/models/building/:id/", BuildingAdminController, :update
     delete "/models/building/:id/", BuildingAdminController, :delete
-
+    # Crafter
     get "/models/crafter/", CrafterAdminController, :index
     get "/models/crafter/new/", CrafterAdminController, :new
+    post "/models/crafter/new/", CrafterAdminController, :create
+    get "/models/crafter/:id/", CrafterAdminController, :read
+    put "/models/crafter/:id/", CrafterAdminController, :update
+    delete "/models/crafter/:id/", CrafterAdminController, :delete
 
     get "/models/furnishing/", FurnishingAdminController, :index
 
