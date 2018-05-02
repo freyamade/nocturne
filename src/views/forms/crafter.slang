@@ -4,4 +4,7 @@ div.input-field.col.s12
 div.input-field.col.s12
   select name="skill_level"
     - model.skill_names.each do |value, name|
-      option value="#{value}" = name
+      - if value == model.skill_level
+        option value="#{value}" selected="selected" = name
+      - else
+        option value="#{value}" = name
