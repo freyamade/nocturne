@@ -21,7 +21,7 @@ html
                 p = value
       div.row
         div.col.s12
-          nav.indigo.darken-4
+          nav.indigo.darken-3
             div.nav-wrapper
               div.col.s12
                 a.breadcrumb href="/admin/" = "Admin Panel"
