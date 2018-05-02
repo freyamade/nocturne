@@ -3,6 +3,8 @@ div.card.indigo-text.text-darken-4.z-depth-5
     div.row
       div.card-title
         | Profile
+            - if user.player
+              span.badge.new.badge.white.light-blue-text.text-darken-4 data-badge-caption="Player"
             - if user.admin
               span.badge.new.badge.white.indigo-text.text-darken-4 data-badge-caption="Admin"
       form action="/profile/" method="POST"
