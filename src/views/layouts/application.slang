@@ -14,11 +14,12 @@ html lang="en"
     div.container-fluid
       == render(partial: "layouts/_nav.slang")
     div.container
-      div.row
-        - flash.each do |key, value|
-          div class="card alert-#{key}"
-            div.card-content.white-text
-              p = value
+      - if !flash.empty?
+        div.row
+          - flash.each do |key, value|
+            div class="card alert-#{key}"
+              div.card-content.white-text
+                p = value
       div.row
         div.col.s12.main
           == content
