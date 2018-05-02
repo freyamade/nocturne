@@ -45,6 +45,7 @@ class AuthController < ApplicationController
     end
     user.password = params["password"].to_s
     user.admin = false
+    user.player = false
 
     if user.valid? && passwords_match && user.save
       session[:user_id] = user.id
