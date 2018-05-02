@@ -10,13 +10,8 @@ class BuildingAdminController < AdminBaseController
 
   def new
     # What fields are required for the model and their types I guess
-    name = ""
-    level = 0
-    build_time = 0
-    population = 0
-    description = ""
-    unique_per_village = false
-    render "forms/building_create_update.slang", layout: "admin/new_model.slang"
+    model = Building.new
+    render "forms/building.slang", layout: "admin/model_form.slang"
   end
 
   def create
@@ -25,28 +20,15 @@ class BuildingAdminController < AdminBaseController
     if params.key?(:unique_per_village) && params[:unique_per_village] == "on"
       unique = true
     end
-    b = Building.new
-    b.name = params[:name]
-    b.level = params[:level].to_i
-    b.build_time = params[:build_time].to_i
-    b.population = params[:population].to_i
-    b.description = params[:description]
-    b.unique_per_village = unique
-    if !b.valid?
-      name = params[:name]
-      level = params[:level]
-      build_time = params[:build_time]
-      population = params[:population]
-      description = params[:description]
-      unique_per_village = unique
-      # Since alerts are in a hash, just display the first error
-      flash[:danger] = b.errors[0].to_s.not_nil!
-      return render "forms/building_create_update.slang", layout: "admin/new_model.slang"
+    model = Building.new building_params.validate!
+    model.unique_per_village = unique
+    if model.valid? && model.save
+      flash[:success] = "#{model.to_s} created successfully!"
+      redirect_to location: "../"
+    else
+      # Re-render with errors
+      return render "forms/building.slang", layout: "admin/model_form.slang"
     end
-    # Everything is good so redirect to the model list with a success message
-    b.save
-    flash[:success] = "#{b.name} (Level #{b.level}) created successfully!"
-    redirect_to location: "../"
   end
 
   def read
@@ -59,15 +41,9 @@ class BuildingAdminController < AdminBaseController
       redirect_to location: "/admin/models/building/"
       return
     end
-    b = Building.find id
-    if b
-      name = b.name
-      level = b.level
-      build_time = b.build_time
-      population = b.population
-      description = b.description
-      unique_per_village = b.unique_per_village
-      render "forms/building_create_update.slang", layout: "admin/new_model.slang"
+    model = Building.find id
+    if model
+      render "forms/building.slang", layout: "admin/model_form.slang"
     else
       flash[:danger] = "No Building with id #{id} found."
       redirect_to location: "/admin/models/building/"
@@ -84,31 +60,23 @@ class BuildingAdminController < AdminBaseController
       redirect_to location: "/admin/models/building/"
       return
     end
-    b = Building.find id
-    if b
+    model = Building.find id
+    if model
       unique = false
       if params.key?(:unique_per_village) && params[:unique_per_village] == "on"
         unique = true
       end
-      b.name = params[:name]
-      b.level = params[:level].to_i
-      b.build_time = params[:build_time].to_i
-      b.population = params[:population].to_i
-      b.description = params[:description]
-      b.unique_per_village = unique
-      if b.valid?
-        b.save
-        flash[:success] = "Building successfully updated."
+      if !building_params.valid?
+        flash[:danger] = "Parameters invalid. Please check the sent parameters"
       else
-        flash[:danger] = b.errors[0].to_s.not_nil!
-        name = params[:name]
-        level = params[:level]
-        build_time = params[:build_time]
-        population = params[:population]
-        description = params[:description]
-        unique_per_village = unique
+        model.set_attributes building_params.to_h
+        puts model.name
+        model.unique_per_village = unique
+        if model.valid? && model.save
+          flash[:success] = "Building successfully updated."
+        end
       end
-      render "forms/building_create_update.slang", layout: "admin/new_model.slang"
+      render "forms/building.slang", layout: "admin/model_form.slang"
     else
       flash[:danger] = "No Building with id #{id} found."
       redirect_to location: "/admin/models/building/"
@@ -125,14 +93,25 @@ class BuildingAdminController < AdminBaseController
       redirect_to location: "/admin/models/building/"
       return
     end
-    b = Building.find id
-    if b
-      b.destroy
+    model = Building.find id
+    if model
+      model.destroy
       flash[:success] = "Building #{id} successfully deleted."
     else
       flash[:danger] = "No Building with id #{id} found."
     end
     redirect_to location: "/admin/models/building/"
+  end
+
+  private def building_params
+    params.validation do
+      required(:name) { |f| !f.nil? }
+      required(:level) { |f| !f.nil? }
+      required(:build_time) { |f| !f.nil? }
+      required(:population) { |f| !f.nil? }
+      required(:description) { |f| !f.nil? }
+      optional(:unique_per_village) { |f| !f.nil? }
+    end
   end
 end
 
