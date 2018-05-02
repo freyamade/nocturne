@@ -70,7 +70,6 @@ class BuildingAdminController < AdminBaseController
         flash[:danger] = "Parameters invalid. Please check the sent parameters"
       else
         model.set_attributes building_params.to_h
-        puts model.name
         model.unique_per_village = unique
         if model.valid? && model.save
           flash[:success] = "Building successfully updated."
