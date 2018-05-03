@@ -13,14 +13,15 @@ html
     div.container-fluid
       == render(partial: "layouts/_admin_nav.slang")
     div.container
-      div.row
-        - flash.each do |key, value|
-          div class="card alert-#{key}"
-            div.card-content.white-text
-              p = value
+      - if !flash.empty?
+        div.row
+          - flash.each do |key, value|
+            div class="card alert-#{key}"
+              div.card-content.white-text
+                p = value
       div.row
         div.col.s12
-          nav.indigo.darken-4
+          nav.indigo.darken-3
             div.nav-wrapper
               div.col.s12
                 a.breadcrumb href="/admin/" = "Admin Panel"

@@ -29,6 +29,9 @@ function init() {
     // Get all tab elements on the page and initialise them
     document.querySelectorAll('.tabs').forEach(e => {
         M.Tabs.init(e);
+    });
+    document.querySelectorAll('select').forEach(e => {
+        M.FormSelect.init(e);
     })
     // Initialise the sidenav
     M.Sidenav.init(document.querySelector('.sidenav'));
