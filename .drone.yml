@@ -6,8 +6,6 @@ pipeline:
     auto_tag: true
     repo: docker.netsoc.co/crnlpanic/nocturne
     registry: docker.netsoc.co
-    build_args:
-      - SECRET_KEY=$SECRET_KEY
     secrets: [docker_username, docker_password]
     when:
       event: [push, tag]
