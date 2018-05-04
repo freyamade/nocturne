@@ -3,4 +3,3 @@ class HomeController < ApplicationController
     render("index.slang")
   end
 end
-
