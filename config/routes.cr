@@ -57,8 +57,13 @@ Amber::Server.configure do |app|
     get "/models/crafter/:id/", CrafterAdminController, :read
     put "/models/crafter/:id/", CrafterAdminController, :update
     delete "/models/crafter/:id/", CrafterAdminController, :delete
-
+    # Furnishing
     get "/models/furnishing/", FurnishingAdminController, :index
+    get "/models/furnishing/new/", FurnishingAdminController, :new
+    post "/models/furnishing/new/", FurnishingAdminController, :create
+    get "/models/furnishing/:id/", FurnishingAdminController, :read
+    put "/models/furnishing/:id/", FurnishingAdminController, :update
+    delete "/models/furnishing/:id/", FurnishingAdminController, :delete
 
     get "/models/resource/", ResourceAdminController, :index
 
