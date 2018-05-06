@@ -7,7 +7,7 @@ pipeline:
       - crystal tool format --check config/ db/ spec/ src/
 
   test:
-    image: crystalllang/crystal
+    image: crystallang/crystal
     commands:
       - crystal spec
 
