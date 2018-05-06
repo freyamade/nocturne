@@ -3,13 +3,21 @@ pipeline:
     image: crystallang/crystal
     commands:
       - crystal tool format --check config/ db/ spec/ src/
+    when:
+      event: push
+      branch:
+        excludes: master
 
   test:
     image: amberframework/amber:v0.7.2
     commands:
       # Sleep to ensure the DB is ready at this point
-      - sleep 10
+      - shards install
       - crystal spec
+    when:
+      event: push
+      branch:
+        excludes: master
 
   docker_build:
     image: plugins/docker
