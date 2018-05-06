@@ -27,6 +27,11 @@ class AdminBaseController < ApplicationController
     nil
   end
 
+  def multipart_form?
+    # Overwrite in any controller that needs its form to be multipart for file uploads
+    false
+  end
+
   def is_read?
     # Determines from the path whether or not the form displayed is a read/update form
     path_end = request.path.split("/")[-2]

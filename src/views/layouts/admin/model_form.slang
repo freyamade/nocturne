@@ -47,7 +47,11 @@ html
                   - model.errors.each do |e|
                     div.card.alert-danger.white-text
                       = e.to_s
-                form action="." method="POST"
+                - if multipart_form?
+                  - enctype = "multipart/form-data"
+                - else
+                  - enctype = "application/x-www-form-urlencoded"
+                form action="." method="POST" enctype="#{enctype}"
                   == csrf_tag
                   - if (is_read?)
                     input name="_method" type="hidden" value="put"
