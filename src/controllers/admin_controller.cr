@@ -38,6 +38,31 @@ class AdminBaseController < ApplicationController
       false
     end
   end
+
+  # All of the REST methods that need to be overwritten
+  def index
+    "Not Implemented"
+  end
+
+  def new
+    "Not Implemented"
+  end
+
+  def create
+    "Not Implemented"
+  end
+
+  def read
+    "Not Implemented"
+  end
+
+  def update
+    "Not Implemented"
+  end
+
+  def delete
+    "Not Implemented"
+  end
 end
 
 class AdminController < AdminBaseController
