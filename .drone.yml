@@ -12,9 +12,10 @@ pipeline:
     image: amberframework/amber:v0.7.2
     commands:
       - shards install
-      - sleep 5
       - amber db migrate
       - crystal spec
+    environment:
+      - AMBER_ENV=test
     when:
       event: push
       branch:
