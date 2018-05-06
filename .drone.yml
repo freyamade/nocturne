@@ -13,6 +13,7 @@ pipeline:
     commands:
       # Sleep to ensure the DB is ready at this point
       - shards install
+      - amber db create migrate
       - crystal spec
     when:
       event: push
