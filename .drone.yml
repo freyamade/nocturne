@@ -13,6 +13,8 @@ pipeline:
     commands:
       # Sleep to ensure the DB is ready at this point
       - shards install
+      # Wait for the DB to be up by polling
+      - until psql -U postgres -d nocturne_test -h test_db -c "SELECT 1;" >/dev/null 2>&1; do sleep 1; done
       - amber db create migrate
       - crystal spec
     when:
