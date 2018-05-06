@@ -11,11 +11,9 @@ pipeline:
   test:
     image: amberframework/amber:v0.7.2
     commands:
-      # Sleep to ensure the DB is ready at this point
       - shards install
-      # Wait for the DB to be up by polling
-      - until psql -U postgres -d nocturne_test -h test_db -c "SELECT 1;" >/dev/null 2>&1; do sleep 1; done
-      - amber db create migrate
+      - sleep 5
+      - amber db migrate
       - crystal spec
     when:
       event: push
