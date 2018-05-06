@@ -22,7 +22,7 @@ process_count: 1
 # ssl_key_file:
 # ssl_cert_file:
 redis_url: "redis://localhost:6379"
-database_url: postgres://postgres:@localhost:5432/nocturne_test
+database_url: postgres://postgres@test_db:5432/nocturne_test
 session:
   key: amber.session
   store: signed_cookie
