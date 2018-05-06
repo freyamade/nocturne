@@ -13,7 +13,7 @@ class Resource < Granite::ORM::Base
   timestamps
 
   # Validation
-  validate(:name, "is required." ->(resource : self) {
+  validate(:name, "is required.", ->(resource : self) {
     (resource != nil && resource.name != "")
   })
 
