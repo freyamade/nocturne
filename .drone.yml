@@ -6,6 +6,11 @@ pipeline:
     commands:
       - crystal tool format --check config/ db/ spec/ src/
 
+  test:
+    image: crystalllang/crystal
+    commands:
+      - crystal spec
+
   docker_build:
     image: plugins/docker
     auto_tag: true
