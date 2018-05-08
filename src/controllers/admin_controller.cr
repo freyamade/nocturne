@@ -27,6 +27,11 @@ class AdminBaseController < ApplicationController
     nil
   end
 
+  def multipart_form?
+    # Overwrite in any controller that needs its form to be multipart for file uploads
+    false
+  end
+
   def is_read?
     # Determines from the path whether or not the form displayed is a read/update form
     path_end = request.path.split("/")[-2]
@@ -37,6 +42,31 @@ class AdminBaseController < ApplicationController
     rescue
       false
     end
+  end
+
+  # All of the REST methods that need to be overwritten
+  def index
+    "Not Implemented"
+  end
+
+  def new
+    "Not Implemented"
+  end
+
+  def create
+    "Not Implemented"
+  end
+
+  def read
+    "Not Implemented"
+  end
+
+  def update
+    "Not Implemented"
+  end
+
+  def delete
+    "Not Implemented"
   end
 end
 
