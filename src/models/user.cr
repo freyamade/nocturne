@@ -71,4 +71,8 @@ class User < Granite::ORM::Base
   end
 
   private getter new_password : String?
+
+  def to_s
+    "#{self.name} (#{self.email})"
+  end
 end
