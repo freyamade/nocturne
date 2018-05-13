@@ -25,27 +25,30 @@ nav .brand-logo {
 }
 
 // Alerts
-.card.alert-success {
-  background-color: #43a047;
+.card {
+  &.alert-success {
+    background-color: #43a047;
+  }
+  &.alert-danger {
+    background-color: #ff1744;
+  }
+  &.alert-warning {
+    background-color: #ffab40;
+  }
+  &.alert-info {
+    background-color: #039be5;
+  }
 }
-.card.alert-danger {
-  background-color: #ff1744;
-}
-.card.alert-warning {
-  background-color: #ffab40;
-}
-.card.alert-info {
-  background-color: #039be5;
-}
-
 // Tab Indicator Color
-.tabs .indicator {
-  background-color: #1a237e;
-}
+.tabs {
+  .indicator {
+    background-color: #1a237e;
+  }
 
-.tabs .tab a:focus, .tabs .tab a:focus.active {
-  background-color: rgba(26, 35, 126, 0.2);
-  outline: none;
+  .tab a:focus, .tab a:focus.active {
+    background-color: rgba(26, 35, 126, 0.2);
+    outline: none;
+  }
 }
 
 // Fixed action button
