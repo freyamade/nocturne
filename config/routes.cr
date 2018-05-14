@@ -76,6 +76,7 @@ Amber::Server.configure do |app|
     get "/models/village/new/", VillageAdminController, :new
     post "/models/village/new/", VillageAdminController, :create
     get "/models/village/:id/", VillageAdminController, :read
+    put "/models/village/:id/", VillageAdminController, :update
 
     get "/models/villager/", VillagerAdminController, :index
     # Relations

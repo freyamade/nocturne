@@ -41,6 +41,32 @@ class VillageAdminController < AdminBaseController
     end
   end
 
+  def update
+    id : Int64 | Nil
+    begin
+      id = params[:id].to_i64
+    rescue
+      flash[:danger] = "Invalid id parameter: #{params[:id]}"
+      redirect_to location: "/admin/models/village/"
+      return
+    end
+    model = Village.find id
+    if model
+      if !village_params.valid?
+        flash[:danger] = "Parameters invalid. Please check the sent parameters."
+      else
+        model.set_attributes village_params.to_h
+        if model.valid? && model.save
+          flash[:success] = "Village updated successfully."
+        end
+      end
+      render "forms/village.slang", layout: "admin/model_form.slang"
+    else
+      flash[:danger] = "No Village with id #{id} found."
+      redirect_to location: "/admin/models/village/"
+    end
+  end
+
   private def village_params
     params.validation do
       required(:name) { |f| !f.nil? }
