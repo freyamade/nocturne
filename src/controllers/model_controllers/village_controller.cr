@@ -67,6 +67,24 @@ class VillageAdminController < AdminBaseController
     end
   end
 
+  def delete
+    id : Int64 | Nil
+    begin
+      id = params[:id].to_i64
+    rescue
+      flash[:danger] = "Invalid id parameter: #{params[:id]}"
+      redirect_to location: "/admin/models/village/"
+    end
+    model = Village.find id
+    if model
+      model.destroy
+      flash[:success] = "Village #{id} successfully deleted."
+    else
+      flash[:danger] = "No Village with id #{id} found."
+    end
+    redirect_to location: "/admin/models/village/"
+  end
+
   private def village_params
     params.validation do
       required(:name) { |f| !f.nil? }
