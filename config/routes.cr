@@ -73,6 +73,7 @@ Amber::Server.configure do |app|
     delete "/models/resource/:id/", ResourceAdminController, :delete
     # Village
     get "/models/village/", VillageAdminController, :index
+    get "/models/village/new/", VillageAdminController, :new
 
     get "/models/villager/", VillagerAdminController, :index
     # Relations
