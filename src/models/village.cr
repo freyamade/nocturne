@@ -29,4 +29,8 @@ class Village < Granite::ORM::Base
   def to_json
     self.to_hash.to_json
   end
+
+  def to_s
+    self.name.not_nil!
+  end
 end
