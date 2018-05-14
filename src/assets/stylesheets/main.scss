@@ -25,27 +25,32 @@ nav .brand-logo {
 }
 
 // Alerts
-.card.alert-success {
-  background-color: #43a047;
+.card {
+  &.alert-success {
+    background-color: #43a047;
+  }
+  &.alert-danger {
+    background-color: #ff1744;
+  }
+  &.alert-warning {
+    background-color: #ffab40;
+  }
+  &.alert-info {
+    background-color: #039be5;
+  }
 }
-.card.alert-danger {
-  background-color: #ff1744;
-}
-.card.alert-warning {
-  background-color: #ffab40;
-}
-.card.alert-info {
-  background-color: #039be5;
-}
-
 // Tab Indicator Color
-.tabs .indicator {
-  background-color: #1a237e;
-}
+.tabs {
+  .indicator {
+    background-color: #1a237e;
+  }
 
-.tabs .tab a:focus, .tabs .tab a:focus.active {
-  background-color: rgba(26, 35, 126, 0.2);
-  outline: none;
+  .tab {
+    a:focus, a:focus.active {
+      background-color: rgba(26, 35, 126, 0.2);
+      outline: none;
+    }
+  }
 }
 
 // Fixed action button
@@ -66,9 +71,27 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
   box-shadow: 0 1px 0 0 #1a237e;
 }
 // Label
-input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+input {
+  &:not([type]):focus:not([readonly])+label, 
+  &[type=text]:not(.browser-default):focus:not([readonly])+label,
+  &[type=password]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=email]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=url]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=time]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=date]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=datetime]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=tel]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=number]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=search]:not(.browser-default):focus:not([readonly])+label {
+    color: #1a237e;
+  }
+}
+
+textarea.materialize-textarea:focus:not([readonly])+label {
   color: #1a237e;
 }
+
 // Checkbox
 [type="checkbox"]:checked+span:not(.lever):before {
   border-right: 2px solid #1a237e;
