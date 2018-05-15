@@ -47,26 +47,6 @@ class AdminBaseController < ApplicationController
     instances = self.model_class.all
     render "admin/instance_list.slang"
   end
-
-  def new
-    "Not Implemented"
-  end
-
-  def create
-    "Not Implemented"
-  end
-
-  def read
-    "Not Implemented"
-  end
-
-  def update
-    "Not Implemented"
-  end
-
-  def delete
-    "Not Implemented"
-  end
 end
 
 class AdminController < AdminBaseController
