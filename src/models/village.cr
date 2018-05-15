@@ -29,4 +29,18 @@ class Village < Granite::ORM::Base
   def to_json
     self.to_hash.to_json
   end
+
+  def to_s
+    self.name.not_nil!
+  end
+
+  # Validation Methods
+  validate(:name, "parameter is required.", ->(village : self) {
+    (village != nil && village.name != "")
+  })
+
+  # Ensure that no other village with the same name exists
+  validate(:name, "already exists.", ->(village : self) {
+    (village != nil && Village.find_by(:name, village.name).nil?)
+  })
 end
