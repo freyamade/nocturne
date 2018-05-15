@@ -17,18 +17,6 @@ class Resource < Granite::ORM::Base
     (resource != nil && resource.name != "")
   })
 
-  def to_hash
-    data = {} of Symbol => String
-    icon = self.icon
-    if !icon
-      icon = ""
-    end
-    data = {
-      :name => self.name.not_nil!,
-      :icon => icon,
-    }
-  end
-
   def to_s
     self.name
   end

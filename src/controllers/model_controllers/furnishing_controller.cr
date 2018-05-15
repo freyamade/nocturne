@@ -1,11 +1,6 @@
 class FurnishingAdminController < AdminBaseController
-  def model_name
-    "Furnishing"
-  end
-
-  def index
-    instances = Furnishing.all
-    render "admin/instance_list.slang"
+  def model_class
+    Furnishing
   end
 
   def new

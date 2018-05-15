@@ -1,11 +1,6 @@
 class BuildingAdminController < AdminBaseController
-  def model_name
-    "Building"
-  end
-
-  def index
-    instances = Building.all
-    render "admin/instance_list.slang"
+  def model_class
+    Building
   end
 
   def new

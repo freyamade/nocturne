@@ -1,11 +1,6 @@
 class CrafterAdminController < AdminBaseController
-  def model_name
-    "Crafter"
-  end
-
-  def index
-    instances = Crafter.all
-    render "admin/instance_list.slang"
+  def model_class
+    Crafter
   end
 
   def new

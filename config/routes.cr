@@ -79,7 +79,6 @@ Amber::Server.configure do |app|
     put "/models/village/:id/", VillageAdminController, :update
     delete "/models/village/:id/", VillageAdminController, :delete
 
-    get "/models/villager/", VillagerAdminController, :index
     # Relations
     get "/relations/buildqueuebuilding/", BuildQueueBuildingAdminController, :index
     get "/relations/buildingfurnishing/", BuildingFurnishingAdminController, :index
@@ -89,11 +88,6 @@ Amber::Server.configure do |app|
     get "/relations/residingcrafter/", ResidingCrafterAdminController, :index
     get "/relations/resourcestore/", ResourceStoreAdminController, :index
     get "/relations/villagebuilding/", VillageBuildingAdminController, :index
-  end
-
-  routes :web, "/json" do
-    # JSON routes for the API, might as well test it out
-    get "/", VillageController, :json_index
   end
 
   routes :static do

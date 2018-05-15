@@ -14,17 +14,15 @@ class AdminBaseController < ApplicationController
     end
   end
 
-  private def nocturne_id
-    return Village.find_by(:name, "Nocturne").not_nil!.id.not_nil!
-  end
-
   before_action do
     all { redirect_non_admin }
   end
 
-  def model_name
-    # Overwrite this function in subclasses to change page title
-    nil
+  # Controller Methods
+  def model_class
+    # Get the model for the current controller.
+    # Overwrite in subclasses
+    Object # Object just so that the return value from this class will have a .name method
   end
 
   def multipart_form?
@@ -46,27 +44,8 @@ class AdminBaseController < ApplicationController
 
   # All of the REST methods that need to be overwritten
   def index
-    "Not Implemented"
-  end
-
-  def new
-    "Not Implemented"
-  end
-
-  def create
-    "Not Implemented"
-  end
-
-  def read
-    "Not Implemented"
-  end
-
-  def update
-    "Not Implemented"
-  end
-
-  def delete
-    "Not Implemented"
+    instances = self.model_class.all
+    render "admin/instance_list.slang"
   end
 end
 

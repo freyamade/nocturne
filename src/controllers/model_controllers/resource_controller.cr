@@ -1,15 +1,10 @@
 class ResourceAdminController < AdminBaseController
-  def model_name
-    "Resource"
+  def model_class
+    Resource
   end
 
   def multipart_form?
     true
-  end
-
-  def index
-    instances = Resource.all
-    render "admin/instance_list.slang"
   end
 
   def new

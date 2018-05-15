@@ -1,11 +1,6 @@
 class VillageAdminController < AdminBaseController
-  def model_name
-    "Village"
-  end
-
-  def index
-    instances = Village.all
-    render "admin/instance_list.slang"
+  def model_class
+    Village
   end
 
   def new

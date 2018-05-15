@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    - subtitle = model_name ? "- #{model_name}" : ""
+    - subtitle = model_class.name != "Object" ? "- #{model_class.name}" : ""
     title = "Nocturne Admin Page #{subtitle}"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"

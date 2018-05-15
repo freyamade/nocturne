@@ -4,7 +4,7 @@ nav.indigo.darken-3
       a.breadcrumb href="/admin/" = "Admin Panel"
       a.breadcrumb.disabled href="#"
         = request.path.includes?("models") ? "Models" : "Relations"
-      a.breadcrumb.disabled href="#" = "#{model_name}"
+      a.breadcrumb.disabled href="#" = "#{model_class.name}"
 
 div.col.s12
   div.card.z-index-5

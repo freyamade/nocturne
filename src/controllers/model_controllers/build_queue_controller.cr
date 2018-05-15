@@ -1,11 +1,6 @@
 class BuildQueueAdminController < AdminBaseController
-  def model_name
-    "Build Queue"
-  end
-
-  def index
-    instances = BuildQueue.all
-    render "admin/instance_list.slang"
+  def model_class
+    BuildQueue
   end
 end
 
