@@ -13,23 +13,6 @@ class Village < Granite::ORM::Base
   field name : String
   timestamps
 
-  def to_hash
-    # Build up a dictionary of all the information about a village
-    # TODO at a later time
-    data = {
-      :name        => self.name.not_nil!,
-      :resources   => ResourceStore.get_data_for_village(self.id.not_nil!),
-      :buildings   => "",
-      :villagers   => "",
-      :crafters    => "",
-      :build_queue => "",
-    }
-  end
-
-  def to_json
-    self.to_hash.to_json
-  end
-
   def to_s
     self.name.not_nil!
   end
