@@ -3,11 +3,6 @@ class CrafterAdminController < AdminBaseController
     Crafter
   end
 
-  def index
-    instances = Crafter.all
-    render "admin/instance_list.slang"
-  end
-
   def new
     model = Crafter.new
     render "forms/crafter.slang", layout: "admin/model_form.slang"

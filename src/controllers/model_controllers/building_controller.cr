@@ -3,11 +3,6 @@ class BuildingAdminController < AdminBaseController
     Building
   end
 
-  def index
-    instances = Building.all
-    render "admin/instance_list.slang"
-  end
-
   def new
     # What fields are required for the model and their types I guess
     model = Building.new

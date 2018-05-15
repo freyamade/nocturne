@@ -7,11 +7,6 @@ class ResourceAdminController < AdminBaseController
     true
   end
 
-  def index
-    instances = Resource.all
-    render "admin/instance_list.slang"
-  end
-
   def new
     model = Resource.new
     render "forms/resource.slang", layout: "admin/model_form.slang"

@@ -44,7 +44,8 @@ class AdminBaseController < ApplicationController
 
   # All of the REST methods that need to be overwritten
   def index
-    "Not Implemented"
+    instances = self.model_class.all
+    render "admin/instance_list.slang"
   end
 
   def new

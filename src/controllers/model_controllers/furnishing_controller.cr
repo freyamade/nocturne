@@ -3,11 +3,6 @@ class FurnishingAdminController < AdminBaseController
     Furnishing
   end
 
-  def index
-    instances = Furnishing.all
-    render "admin/instance_list.slang"
-  end
-
   def new
     model = Furnishing.new
     render "forms/furnishing.slang", layout: "admin/model_form.slang"
