@@ -1,6 +1,6 @@
 class BuildQueueAdminController < AdminBaseController
-  def model_name
-    "Build Queue"
+  def model_class
+    BuildQueue
   end
 
   def index

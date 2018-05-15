@@ -1,6 +1,6 @@
 class FurnishingAdminController < AdminBaseController
-  def model_name
-    "Furnishing"
+  def model_class
+    Furnishing
   end
 
   def index

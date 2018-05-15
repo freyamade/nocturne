@@ -1,6 +1,6 @@
 class CrafterAdminController < AdminBaseController
-  def model_name
-    "Crafter"
+  def model_class
+    Crafter
   end
 
   def index

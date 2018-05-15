@@ -1,6 +1,6 @@
 class ResourceAdminController < AdminBaseController
-  def model_name
-    "Resource"
+  def model_class
+    Resource
   end
 
   def multipart_form?

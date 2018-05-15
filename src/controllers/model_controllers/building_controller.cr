@@ -1,6 +1,6 @@
 class BuildingAdminController < AdminBaseController
-  def model_name
-    "Building"
+  def model_class
+    Building
   end
 
   def index

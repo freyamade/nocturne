@@ -1,6 +1,6 @@
 class VillageAdminController < AdminBaseController
-  def model_name
-    "Village"
+  def model_class
+    Village
   end
 
   def index

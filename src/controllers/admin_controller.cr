@@ -18,9 +18,11 @@ class AdminBaseController < ApplicationController
     all { redirect_non_admin }
   end
 
-  def model_name
-    # Overwrite this function in subclasses to change page title
-    nil
+  # Controller Methods
+  def model_class
+    # Get the model for the current controller.
+    # Overwrite in subclasses
+    Object # Object just so that the return value from this class will have a .name method
   end
 
   def multipart_form?

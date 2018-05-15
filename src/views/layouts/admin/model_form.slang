@@ -27,7 +27,7 @@ html
                 a.breadcrumb href="/admin/" = "Admin Panel"
                 a.breadcrumb.disabled href="#"
                   = request.path.includes?("models") ? "Models" : "Relations"
-                a.breadcrumb href="../" = "#{model_name}"
+                a.breadcrumb href="../" = "#{model_class.name}"
                 a.breadcrumb href="#"
                 - if is_read?
                   = params[:id]
@@ -40,9 +40,9 @@ html
               div.row
                 span.card-title
                   - if (is_read?)
-                    = "Update #{model_name}"
+                    = "Update #{model_class.name}"
                   - else
-                    = "Create new #{model_name}"
+                    = "Create new #{model_class.name}"
                 - if model.errors
                   - model.errors.each do |e|
                     div.card.alert-danger.white-text
