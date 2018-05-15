@@ -60,7 +60,7 @@ class AdminController < AdminBaseController
       Furnishing,
       Resource,
       Village,
-      Villager,
+      # Villager,
     ]
     relations = [
       BuildQueueBuilding,
