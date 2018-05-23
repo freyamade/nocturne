@@ -1,5 +1,7 @@
 Amber::Server.configure do |app|
   pipeline :web do
+    # Ensure trailing slash in the URL
+    plug Slashify.new
     # Plug is the method to use connect a pipe (middleware)
     # A plug accepts an instance of HTTP::Handler
     plug Amber::Pipe::PoweredByAmber.new
