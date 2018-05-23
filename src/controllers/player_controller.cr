@@ -20,6 +20,6 @@ end
 
 class PlayerController < PlayerBaseController
   def index
-    ""
+    render "index.slang"
   end
 end
