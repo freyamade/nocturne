@@ -13,7 +13,7 @@ html lang="en"
   body
     div.container-fluid
       == render(partial: "layouts/_player_nav.slang")
-    div.container
+    div.container-fluid
       - if !flash.empty?
         div.row
           - flash.each do |key, value|
@@ -21,8 +21,7 @@ html lang="en"
               div.card-content.white-text
                 p = value
       div.row
-        div.col.s12.main
-          == content
+        == content
 
     script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"
     script src="/dist/main.bundle.js"
