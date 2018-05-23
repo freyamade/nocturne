@@ -19,4 +19,7 @@ class PlayerBaseController < ApplicationController
 end
 
 class PlayerController < PlayerBaseController
+  def index
+    ""
+  end
 end

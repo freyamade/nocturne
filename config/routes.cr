@@ -33,8 +33,11 @@ Amber::Server.configure do |app|
     get "/signout", AuthController, :delete
     post "/registration", AuthController, :register
     get "/", HomeController, :index
+  end
 
-    # Nocturne stuff
+  # Player section routes
+  routes :web, "/village" do
+    get "/", PlayerController, :index
   end
 
   # Admin Panel Routes
