@@ -1,6 +1,6 @@
 nav.indigo.darken-4
   div.nav-wrapper
-    a.brand-logo href="/admin"
+    a.brand-logo href="/admin/"
       | Nocturne Admin Panel
     a.sidenav-trigger.show-on-med-and-down data-target="mobile-menu"
       i.material-icons
