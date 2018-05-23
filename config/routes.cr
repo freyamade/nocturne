@@ -38,7 +38,7 @@ Amber::Server.configure do |app|
   end
 
   # Player section routes
-  routes :web, "/village" do
+  routes :web, "/nocturne" do
     get "/", PlayerController, :index
   end
 
