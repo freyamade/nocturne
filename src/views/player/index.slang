@@ -2,9 +2,10 @@ div.col.s12.m8
   div.card.indigo.darken-4
     div.card-content.white-text
       span.card-title
-        | Village Overview
-      p
-        | This is where there will hopefully be an overview of the village in detail
+        = "#{nocturne.to_s} Overview"
+      div.row
+        div.col.s12
+          == render partial: "_village_overview.slang"
 div.col.s12.m4
   div.card.indigo.darken-4
     div.card-content.white-text

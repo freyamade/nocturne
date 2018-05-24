@@ -109,3 +109,7 @@ textarea.materialize-textarea:focus:not([readonly])+label {
 .dropdown-content li>a, .dropdown-content li>span {
   color: #1a237e;
 }
+
+.card.large {
+  overflow-y: scroll;
+}
