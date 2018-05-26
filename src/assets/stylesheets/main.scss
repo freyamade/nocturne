@@ -1,6 +1,7 @@
 // Globals
 $fonts: "Lato", serif;
 $nav-fonts: "Jua", sans-serif;
+$main-color: #1a237e;
 
 * {
     margin: 0;
@@ -42,7 +43,7 @@ nav .brand-logo {
 // Tab Indicator Color
 .tabs {
   .indicator {
-    background-color: #1a237e;
+    background-color: $main-color;
   }
 
   .tab {
@@ -62,13 +63,13 @@ nav .brand-logo {
 
 // Form styling
 label {
-  color: #1a237e;
+  color: $main-color;
 }
 // Underline
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #1a237e;
-  -webkit-box-shadow: 0 1px 0 0 #1a237e;
-  box-shadow: 0 1px 0 0 #1a237e;
+  border-bottom: 1px solid $main-color;
+  -webkit-box-shadow: 0 1px 0 0 $main-color;
+  box-shadow: 0 1px 0 0 $main-color;
 }
 // Label
 input {
@@ -84,18 +85,18 @@ input {
   &[type=tel]:not(.browser-default):focus:not([readonly])+label, 
   &[type=number]:not(.browser-default):focus:not([readonly])+label, 
   &[type=search]:not(.browser-default):focus:not([readonly])+label {
-    color: #1a237e;
+    color: $main-color;
   }
 }
 
 textarea.materialize-textarea:focus:not([readonly])+label {
-  color: #1a237e;
+  color: $main-color;
 }
 
 // Checkbox
 [type="checkbox"]:checked+span:not(.lever):before {
-  border-right: 2px solid #1a237e;
-  border-bottom: 2px solid #1a237e;
+  border-right: 2px solid $main-color;
+  border-bottom: 2px solid $main-color;
 }
 
 #logo {
@@ -103,13 +104,21 @@ textarea.materialize-textarea:focus:not([readonly])+label {
 }
 // Select
 .select-wrapper input.select-dropdown {
-  border-bottom: 1px solid #1a237e;
-  color: #1a237e;
+  border-bottom: 1px solid $main-color;
+  color: $main-color;
 }
 .dropdown-content li>a, .dropdown-content li>span {
-  color: #1a237e;
+  color: $main-color;
 }
 
 .card.large {
   overflow-y: scroll;
+}
+
+.modal-trigger {
+  text-decoration: underline;
+}
+
+.modal {
+  border: 1px solid $main-color;
 }

@@ -1,5 +1,8 @@
 import Amber from 'amber'
 
+let buildingModal;
+let buildingModalElmnt;
+
 document.addEventListener('DOMContentLoaded', init, false);
 
 if (!Date.prototype.toGranite) {
@@ -38,4 +41,24 @@ function init() {
     });
     // Initialise the sidenav
     M.Sidenav.init(document.querySelector('.sidenav'));
+
+    // Handle modal stuff for building description pages and the like
+    document.querySelectorAll('.modal').forEach(e => {
+      M.Modal.init(e);
+    });
+    let buildingModalId = '#building-description-modal';
+    buildingModalElmnt = document.querySelector(buildingModalId);
+    buildingModal = M.Modal.getInstance(buildingModalElmnt);
+    document.querySelectorAll(`.modal-trigger[href="${buildingModalId}"`).forEach(e => {
+      e.addEventListener('click', openBuildingDetail, false);
+    });
+}
+
+function openBuildingDetail(e) {
+  let buildingId = e.target.dataset.buildingId;
+  console.log(buildingId);
+  // Send an AJAX request to an API endpoint to read details about the building in question
+  // Set up the title of the modal
+  buildingModalElmnt.querySelector('#building-title').innerHTML = e.target.innerHTML;
+  buildingModal.open();
 }
