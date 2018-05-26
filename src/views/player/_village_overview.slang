@@ -33,5 +33,5 @@ div#building-description-modal.modal.text-darken-4.indigo-text
             p | A simple bed that simply beats sleeping on the floor!
   div.modal-footer
     p.pull-left
-      | Population:
-      span#population-effect-badge.badge.new.green data-badge-caption="+1"
+      | Population Capacity:
+      span#population-effect-badge.badge.new.population-increase data-badge-caption="+1"

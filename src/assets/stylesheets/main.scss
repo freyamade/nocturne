@@ -2,6 +2,8 @@
 $fonts: "Lato", serif;
 $nav-fonts: "Jua", sans-serif;
 $main-color: #1a237e;
+$positive-color: #43a047;
+$negative-color: #ff1744;
 
 * {
     margin: 0;
@@ -28,10 +30,10 @@ nav .brand-logo {
 // Alerts
 .card {
   &.alert-success {
-    background-color: #43a047;
+    background-color: $positive-color;
   }
   &.alert-danger {
-    background-color: #ff1744;
+    background-color: $negative-color;
   }
   &.alert-warning {
     background-color: #ffab40;
@@ -121,4 +123,15 @@ textarea.materialize-textarea:focus:not([readonly])+label {
 
 .modal {
   border: 1px solid $main-color;
+}
+.badge {
+  &.new {
+    &.population-increase {
+      background-color: $positive-color;
+    }
+
+    &.population-decrease {
+      background-color: $negative-color;
+    }
+  }
 }
