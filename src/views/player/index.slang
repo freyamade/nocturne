@@ -1,15 +1,18 @@
 div.col.s12.m8
   div.card.indigo.darken-4
     div.card-content.white-text
-      span.card-title
-        = "#{nocturne.to_s} Overview"
+      div.card-title | Buildings Overview
       div.row
         div.col.s12
           == render partial: "_village_overview.slang"
+        p.right-align
+          = "Population Capacity Remaining: #{nocturne.remaining_population}"
 div.col.s12.m4
   div.card.indigo.darken-4
     div.card-content.white-text
       span.card-title
-        | Sidebar
-      p
-        | Stuff like resource info, the build queue and all that will be here
+        | Management Overview
+      div.row
+        div.col.s12
+          == render partial: "_sidebar.slang"
+        p == "&nbsp;"
