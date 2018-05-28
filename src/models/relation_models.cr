@@ -7,6 +7,12 @@ class BuildQueueBuilding < Granite::ORM::Base
   belongs_to :building
 
   field time_already_spent : Int64
+
+  # Helpers
+  def progress
+    # Helper that returns the completion progress of the current building as a percentage
+    (self.time_already_spent.not_nil! * 100 / self.building.not_nil!.build_time.not_nil!).to_i
+  end
 end
 
 class BuildingFurnishing < Granite::ORM::Base
