@@ -135,3 +135,7 @@ textarea.materialize-textarea:focus:not([readonly])+label {
     }
   }
 }
+
+#build-queue > .collection-item:first-child {
+  font-weight: bold;
+}
