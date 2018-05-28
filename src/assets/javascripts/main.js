@@ -48,10 +48,12 @@ function init() {
     });
     let buildingModalId = '#building-description-modal';
     buildingModalElmnt = document.querySelector(buildingModalId);
-    buildingModal = M.Modal.getInstance(buildingModalElmnt);
-    document.querySelectorAll(`.modal-trigger[href="${buildingModalId}"`).forEach(e => {
-      e.addEventListener('click', openBuildingDetail, false);
-    });
+    if(buildingModalElmnt != null) {
+      buildingModal = M.Modal.getInstance(buildingModalElmnt);
+      document.querySelectorAll(`.modal-trigger[href="${buildingModalId}"`).forEach(e => {
+        e.addEventListener('click', openBuildingDetail, false);
+      });
+    }
 }
 
 function openBuildingDetail(e) {
@@ -59,6 +61,7 @@ function openBuildingDetail(e) {
   console.log(buildingId);
   // Send an AJAX request to an API endpoint to read details about the building in question
   // Set up the title of the modal
+  // TODO - fetch API
   buildingModalElmnt.querySelector('#building-title').innerHTML = e.target.innerHTML;
   buildingModal.open();
 }
