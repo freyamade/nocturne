@@ -26,4 +26,14 @@ class Village < Granite::ORM::Base
   validate(:name, "already exists.", ->(village : self) {
     (village != nil && Village.find_by(:name, village.name).nil?)
   })
+
+  # Helpers
+  def remaining_population
+    # Helper method to calculate the current amount of population the village can still sustain
+    pop = 0
+    self.village_buildings.each do |vb|
+      pop += (vb.building.population.not_nil! * vb.count.not_nil!)
+    end
+    pop
+  end
 end
