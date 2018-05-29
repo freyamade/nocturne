@@ -40,6 +40,7 @@ Amber::Server.configure do |app|
   # Player section routes
   routes :web, "/nocturne" do
     get "/", PlayerController, :index
+    post "/admin/time_advance", PlayerAdminController, :advance_time
   end
 
   # Admin Panel Routes

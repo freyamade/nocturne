@@ -14,7 +14,7 @@ div.card.indigo-text.text-darken-4.large
           li.collection-item.avatar
             img.circle src="/resources/#{rs.resource.icon}"
             span.title = rs.resource.name
-            span.secondary-content = rs.count
+            span.secondary-content.text-darken-4.indigo-text = "Stock: #{rs.count}"
     div#sidebar-craftspeople
       ul.collection
         - nocturne.residing_crafters.each do |rc|
