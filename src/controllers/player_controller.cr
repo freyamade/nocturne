@@ -23,6 +23,13 @@ class PlayerBaseController < ApplicationController
   end
 end
 
+class PlayerController < PlayerBaseController
+  def index
+    resources = Resource.all
+    render "index.slang"
+  end
+end
+
 class PlayerAdminController < PlayerBaseController
   # Special controller for admin controls on player pages
   private def redirect_non_player
@@ -80,10 +87,31 @@ class PlayerAdminController < PlayerBaseController
     flash[:success] = "Successfully updated time by #{time_advance} minutes!"
     redirect_to location: "/nocturne/"
   end
-end
 
-class PlayerController < PlayerBaseController
-  def index
-    render "index.slang"
+  def gather_resource
+    # A method that allows for manual admin control over the village's stores
+    resource_id : Int64 | Nil
+    amount : Int64 | Nil
+    begin
+      resource_id = params[:resource_id].to_i64
+      amount = params[:amount].to_i64
+    rescue
+      flash[:warning] = "Invalid parameters given for manually adding resource"
+      redirect_to location: "/nocturne/"
+    end
+    # Now just increment the count of nocturne's resource store for this resource
+    rs = ResourceStore.first("WHERE resource_id = ? AND village_id = ?", [resource_id, nocturne.id])
+    if rs
+      rs.count = rs.count.not_nil! + amount.not_nil!
+    else
+      rs = ResourceStore.new
+      rs.village = nocturne
+      rs.resource = Resource.find(resource_id).not_nil!
+      rs.count = amount.not_nil!
+    end
+    rs.save
+    # Return to the overview page
+    flash[:success] = "Successfully added #{amount} more of resource #{resource_id}"
+    redirect_to location: "/nocturne/"
   end
 end
