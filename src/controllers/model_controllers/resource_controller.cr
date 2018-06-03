@@ -24,7 +24,7 @@ class ResourceAdminController < AdminBaseController
         # If we're in here, then icon_file won't be nil
         icon_file = params.files["icon_file"]
         # Create a permanent file for the temporary uploaded file in the correct dir
-        File.rename(icon_file.file.path, "static/resources/#{model.icon}")
+        File.rename(icon_file.file.path, "public/resources/#{model.icon}")
       end
       flash[:success] = "#{model.to_s} created successfully!"
       redirect_to location: "../"
@@ -67,8 +67,8 @@ class ResourceAdminController < AdminBaseController
         flash[:danger] = "Parameters invalid. Please check the sent parameters."
       else
         # Delete the old icon and replace with the new icon (if a new one was sent)
-        if File.exists? "static/resource/#{model.icon}"
-          File.delete "static/resources/#{model.icon}"
+        if File.exists? "public/resource/#{model.icon}"
+          File.delete "public/resources/#{model.icon}"
         end
         model.set_attributes resource_params.to_h
         if params.files.has_key? "icon_file"
@@ -80,7 +80,7 @@ class ResourceAdminController < AdminBaseController
             # If we're in here, then icon_file won't be nil
             icon_file = params.files["icon_file"]
             # Create a permanent file for the temporary uploaded file in the correct dir
-            File.rename(icon_file.file.path, "static/resources/#{model.icon}")
+            File.rename(icon_file.file.path, "public/resources/#{model.icon}")
           end
           flash[:success] = "Resource updated successfully."
         end
@@ -103,8 +103,8 @@ class ResourceAdminController < AdminBaseController
     end
     model = Resource.find id
     if model
-      if !model.icon.nil? && File.exists? "static/resource/#{model.icon}"
-        File.delete "static/resource/#{model.icon}"
+      if !model.icon.nil? && File.exists? "public/resource/#{model.icon}"
+        File.delete "public/resource/#{model.icon}"
       end
       model.destroy
       flash[:success] = "Resource #{id} successfully deleted."

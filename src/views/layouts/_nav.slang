@@ -14,6 +14,9 @@ nav.indigo.darken-4
         - else
           a href="/signinup/"
             | Sign In / Up
+      - if (current_user && current_user.not_nil!.player)
+        li
+          a href="/nocturne/" = "Enter The Village"
       - if (current_user && current_user.not_nil!.admin)
         li
           a href="/admin/" = "Admin Panel"
@@ -26,6 +29,9 @@ ul.sidenav#mobile-menu
     - else
       a href="/signinup/"
         | Sign In / Up
+  - if (current_user && current_user.not_nil!.player)
+    li
+      a href="/nocturne/" = "Enter The Village"
   - if (current_user && current_user.not_nil!.admin)
     li
       a href="/admin/" = "Admin Panel"

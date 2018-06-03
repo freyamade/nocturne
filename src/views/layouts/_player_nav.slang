@@ -1,7 +1,8 @@
 nav.indigo.darken-4
   div.nav-wrapper
-    a.brand-logo href="/admin/"
-      | Nocturne Admin Panel
+    a.brand-logo href="/nocturne/"
+      img#logo.hide-on-med-and-down src="/dist/images/logo.svg" alt="Nocturne Coat of Arms" width="36" height="36"
+      | The Village Of Nocturne
     a.sidenav-trigger.show-on-med-and-down data-target="mobile-menu"
       i.material-icons
         | menu

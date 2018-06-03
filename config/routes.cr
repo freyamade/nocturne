@@ -1,5 +1,7 @@
 Amber::Server.configure do |app|
   pipeline :web do
+    # Ensure trailing slash in the URL
+    plug Slashify.new
     # Plug is the method to use connect a pipe (middleware)
     # A plug accepts an instance of HTTP::Handler
     plug Amber::Pipe::PoweredByAmber.new
@@ -33,8 +35,17 @@ Amber::Server.configure do |app|
     get "/signout", AuthController, :delete
     post "/registration", AuthController, :register
     get "/", HomeController, :index
+  end
 
-    # Nocturne stuff
+  # Player section routes
+  routes :web, "/nocturne" do
+    get "/", PlayerController, :index
+  end
+
+  # Player section admin routes
+  routes :web, "/nocturne/admin" do
+    post "/time_advance", PlayerAdminController, :advance_time
+    post "/gather_resource", PlayerAdminController, :gather_resource
   end
 
   # Admin Panel Routes

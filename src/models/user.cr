@@ -66,10 +66,6 @@ class User < Granite::ORM::Base
     (bcrypt_pass = self.password) ? bcrypt_pass == password : false
   end
 
-  def is_admin?
-    @admin
-  end
-
   private getter new_password : String?
 
   def to_s
