@@ -12,8 +12,6 @@ Amber::Server.configure do |app|
     plug Amber::Pipe::Session.new
     plug Amber::Pipe::Flash.new
     plug Amber::Pipe::CSRF.new
-    # Reload clients browsers (development only)
-    # plug Amber::Pipe::Reload.new if Amber.env.development?  Seems as though this was removed?
 
     plug Authenticate.new
   end
