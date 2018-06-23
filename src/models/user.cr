@@ -1,7 +1,7 @@
-require "granite_orm/adapter/pg"
+require "granite/adapter/pg"
 require "crypto/bcrypt/password"
 
-class User < Granite::ORM::Base
+class User < Granite::Base
   include Crypto
   adapter pg
   primary id : Int64

@@ -1,4 +1,4 @@
-class Furnishing < Granite::ORM::Base
+class Furnishing < Granite::Base
   adapter pg
   table_name furnishings
 

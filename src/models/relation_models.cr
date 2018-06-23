@@ -1,4 +1,4 @@
-class BuildQueueBuilding < Granite::ORM::Base
+class BuildQueueBuilding < Granite::Base
   # Keeps track of the Buildings in a Village's BuildQueue
   adapter pg
   table_name build_queue_buildings
@@ -15,7 +15,7 @@ class BuildQueueBuilding < Granite::ORM::Base
   end
 end
 
-class BuildingFurnishing < Granite::ORM::Base
+class BuildingFurnishing < Granite::Base
   # Keeps track of how much of each kind of Furnishing are in a Building
   adapter pg
   table_name building_furnishings
@@ -26,7 +26,7 @@ class BuildingFurnishing < Granite::ORM::Base
   field count : Int64
 end
 
-class BuildingRequirement < Granite::ORM::Base
+class BuildingRequirement < Granite::Base
   # Keeps track of buildings that are required to already exist before a building can be created
   adapter pg
   table_name building_requirements
@@ -43,7 +43,7 @@ class BuildingRequirement < Granite::ORM::Base
   end
 end
 
-class BuildingResource < Granite::ORM::Base
+class BuildingResource < Granite::Base
   # Keeps track of how many Resources it takes to build each Building type
   adapter pg
   table_name building_resources
@@ -54,7 +54,7 @@ class BuildingResource < Granite::ORM::Base
   field count : Int64
 end
 
-class RequiredCrafter < Granite::ORM::Base
+class RequiredCrafter < Granite::Base
   # Keeps track of which Crafters are required to build each Building
   adapter pg
   table_name required_crafters
@@ -63,7 +63,7 @@ class RequiredCrafter < Granite::ORM::Base
   belongs_to :crafter
 end
 
-class ResidingCrafter < Granite::ORM::Base
+class ResidingCrafter < Granite::Base
   # Keeps track of which Crafters live in a Village
   adapter pg
   table_name residing_crafters
@@ -74,7 +74,7 @@ class ResidingCrafter < Granite::ORM::Base
   field name : String
 end
 
-class ResourceStore < Granite::ORM::Base
+class ResourceStore < Granite::Base
   # Keeps track of how many of each Resource are in a Village's stores
   adapter pg
   table_name resource_stores
@@ -102,7 +102,7 @@ class ResourceStore < Granite::ORM::Base
   end
 end
 
-class VillageBuilding < Granite::ORM::Base
+class VillageBuilding < Granite::Base
   # Keeps track of how many of each Building are in a Village
   adapter pg
   table_name village_buildings

@@ -1,4 +1,4 @@
-class Villager < Granite::ORM::Base
+class Villager < Granite::Base
   adapter pg
   table_name villagers
 
