@@ -12,7 +12,7 @@ class BuildingAdminController < AdminBaseController
   def create
     # Validate the params and try to create
     unique = false
-    if params.key?(:unique_per_village) && params[:unique_per_village] == "on"
+    if params.has_key?(:unique_per_village) && params[:unique_per_village] == "on"
       unique = true
     end
     model = Building.new building_params.validate!
@@ -58,7 +58,7 @@ class BuildingAdminController < AdminBaseController
     model = Building.find id
     if model
       unique = false
-      if params.key?(:unique_per_village) && params[:unique_per_village] == "on"
+      if params.has_key?(:unique_per_village) && params[:unique_per_village] == "on"
         unique = true
       end
       if !building_params.valid?
