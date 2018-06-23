@@ -3,12 +3,7 @@ html
   head
     - subtitle = model_class.name != "Object" ? "- #{model_class.name}" : ""
     title = "Nocturne Admin Page #{subtitle}"
-    meta charset="utf-8"
-    meta http-equiv="X-UA-Compatible" content="IE=edge"
-    meta name="viewport" content="width=device-width, initial-scale=1"
-    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
-    link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Lato|Jua"
-    link rel="stylesheet" href="/dist/main.bundle.css"
+    == render(partial: "layouts/_head_common.slang")
 
   body
     div.container-fluid
@@ -24,6 +19,4 @@ html
         div.col.s12
           == content
 
-    script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"
-    script src="/dist/main.bundle.js"
+    == render(partial: "layouts/_scripts_common.slang")
