@@ -2,11 +2,11 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.7.2
+    version: 0.8.0
 
   amber_router:
-    github: amberframework/router
-    version: 0.0.3
+    github: amberframework/amber-router
+    version: 0.1.0
 
   callback:
     github: mosop/callback
@@ -14,10 +14,10 @@ shards:
 
   citrine-i18n:
     github: amberframework/citrine-i18n
-    version: 0.1.0
+    version: 0.3.2
 
   cli:
-    github: amberframework/cli
+    github: mosop/cli
     version: 0.7.0
 
   compiled_license:
@@ -34,15 +34,15 @@ shards:
 
   garnet_spec:
     github: amberframework/garnet-spec
-    version: 0.1.1
+    version: 0.2.1
 
-  granite_orm:
-    github: amberframework/granite-orm
-    version: 0.8.4
+  granite:
+    github: amberframework/granite
+    version: 0.12.1
 
   i18n:
     github: TechMagister/i18n.cr
-    version: 0.1.0
+    version: 0.2.0
 
   inflector:
     github: phoffer/inflector.cr
@@ -56,13 +56,17 @@ shards:
     github: jeromegn/kilt
     version: 0.4.0
 
+  liquid:
+    github: TechMagister/liquid.cr
+    version: 0.3.0
+
   micrate:
     github: amberframework/micrate
-    version: 0.3.0
+    version: 0.3.3
 
   mysql:
     github: crystal-lang/crystal-mysql
-    version: 0.4.0
+    version: 0.5.0
 
   optarg:
     github: mosop/optarg
@@ -70,7 +74,11 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.14.1
+    version: 0.15.0
+
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
 
   quartz_mailer:
     github: amberframework/quartz-mailer
@@ -78,11 +86,11 @@ shards:
 
   redis:
     github: stefanwille/crystal-redis
-    version: 1.9.0
+    version: 2.0.0
 
   selenium:
     github: ysbaddaden/selenium-webdriver-crystal
-    version: 0.3.0
+    version: 0.4.0
 
   shell-table:
     github: jwaldrip/shell-table.cr
@@ -94,13 +102,13 @@ shards:
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3
-    version: 0.9.0
+    version: 0.10.0
 
   string_inflection:
     github: mosop/string_inflection
     version: 0.2.1
 
   teeplate:
-    github: amberframework/teeplate
-    version: 0.5.0
+    github: mosop/teeplate
+    version: 0.6.1
 
