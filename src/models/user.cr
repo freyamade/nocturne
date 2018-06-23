@@ -21,7 +21,7 @@ class User < Granite::Base
   end
 
   validate :email, "already in use", ->(user : User) do
-    existing = User.find_by :email, user.email
+    existing = User.find_by email: user.email
     # The initial version ensured only that a user did not exist with this email
     # However, since this causes errors when updating users, this should be changed to check if another user has this email
     if existing

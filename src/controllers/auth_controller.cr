@@ -10,7 +10,7 @@ class AuthController < ApplicationController
   end
 
   def create
-    user = User.find_by(:email, params["email"].to_s)
+    user = User.find_by email: params["email"].to_s
     if user && user.authenticate(params["password"].to_s)
       session[:user_id] = user.id
       flash[:info] = "Successfully logged in"

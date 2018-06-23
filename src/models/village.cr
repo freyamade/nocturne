@@ -24,7 +24,7 @@ class Village < Granite::Base
 
   # Ensure that no other village with the same name exists
   validate(:name, "already exists.", ->(village : self) {
-    (village != nil && Village.find_by(:name, village.name).nil?)
+    (village != nil && Village.find_by(name: village.name).nil?)
   })
 
   # Helpers
