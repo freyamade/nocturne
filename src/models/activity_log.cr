@@ -1,4 +1,4 @@
-class ActivityLog < Granite::ORM::Base
+class ActivityLog < Granite::Base
   adapter pg
   table_name activity_logs
 

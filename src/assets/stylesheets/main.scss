@@ -1,5 +1,5 @@
 // Globals
-$fonts: "Lato", serif;
+$fonts: "Raleway", sans-serif;
 $nav-fonts: "Jua", sans-serif;
 $main-color: #1a237e;
 $positive-color: #43a047;
@@ -75,17 +75,17 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 // Label
 input {
-  &:not([type]):focus:not([readonly])+label, 
+  &:not([type]):focus:not([readonly])+label,
   &[type=text]:not(.browser-default):focus:not([readonly])+label,
-  &[type=password]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=email]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=url]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=time]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=date]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=datetime]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=tel]:not(.browser-default):focus:not([readonly])+label, 
-  &[type=number]:not(.browser-default):focus:not([readonly])+label, 
+  &[type=password]:not(.browser-default):focus:not([readonly])+label,
+  &[type=email]:not(.browser-default):focus:not([readonly])+label,
+  &[type=url]:not(.browser-default):focus:not([readonly])+label,
+  &[type=time]:not(.browser-default):focus:not([readonly])+label,
+  &[type=date]:not(.browser-default):focus:not([readonly])+label,
+  &[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+  &[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+  &[type=tel]:not(.browser-default):focus:not([readonly])+label,
+  &[type=number]:not(.browser-default):focus:not([readonly])+label,
   &[type=search]:not(.browser-default):focus:not([readonly])+label {
     color: $main-color;
   }

@@ -18,16 +18,12 @@ targets:
 dependencies:
   amber:
     github: amberframework/amber
-    version: 0.7.2
+    version: 0.8.0
     #branch: master
 
-  citrine-i18n:
-    github: amberframework/citrine-i18n
-    version: 0.1.0
-
-  granite_orm:
-    github: amberframework/granite-orm
-    version: ~> 0.8.4
+  granite:
+    github: amberframework/granite
+    version: ~> 0.12.1
 
   quartz_mailer:
     github: amberframework/quartz-mailer
@@ -39,9 +35,13 @@ dependencies:
 
   pg:
     github: will/crystal-pg
-    version: ~> 0.14.1
+    version: ~> 0.15.0
+
+  citrine-i18n:
+    github: amberframework/citrine-i18n
+    version: 0.3.2
 
 development_dependencies:
-  garnet_spec:
-    github: amberframework/garnet-spec
-    version: ~> 0.1.1
+ garnet_spec:
+   github: amberframework/garnet-spec
+   version: ~> 0.2.1

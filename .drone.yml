@@ -9,9 +9,9 @@ pipeline:
         excludes: master
 
   test:
-    image: amberframework/amber:v0.7.2
+    image: amberframework/amber:v0.8.0
     commands:
-      - shards install
+      - shards update
       - amber db migrate
       - crystal spec
     environment:

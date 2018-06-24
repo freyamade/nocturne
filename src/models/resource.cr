@@ -1,4 +1,4 @@
-class Resource < Granite::ORM::Base
+class Resource < Granite::Base
   adapter pg
   table_name resources
 

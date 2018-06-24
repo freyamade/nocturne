@@ -15,7 +15,7 @@ class PlayerBaseController < ApplicationController
 
   def nocturne
     # Helper method that just gets the Village instance related to Nocturne
-    Village.find_by(:name, "Nocturne").not_nil!
+    Village.find_by(name: "Nocturne").not_nil!
   end
 
   before_action do

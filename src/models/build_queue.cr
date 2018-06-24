@@ -1,4 +1,4 @@
-class BuildQueue < Granite::ORM::Base
+class BuildQueue < Granite::Base
   adapter pg
   table_name build_queues
 

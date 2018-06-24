@@ -10,7 +10,7 @@ class AuthController < ApplicationController
   end
 
   def create
-    user = User.find_by(:email, params["email"].to_s)
+    user = User.find_by email: params["email"].to_s
     if user && user.authenticate(params["password"].to_s)
       session[:user_id] = user.id
       flash[:info] = "Successfully logged in"
@@ -41,7 +41,7 @@ class AuthController < ApplicationController
     if !params[:password]? || !params[:confirm_password] || params[:password] != params[:confirm_password]
       # Display an error
       passwords_match = false
-      user.errors << Granite::ORM::Error.new(:passwords, "do not match.")
+      user.errors << Granite::Error.new(:passwords, "do not match.")
     end
     user.password = params["password"].to_s
     user.admin = false

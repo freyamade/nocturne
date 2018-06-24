@@ -1,4 +1,4 @@
-class Crafter < Granite::ORM::Base
+class Crafter < Granite::Base
   adapter pg
   table_name crafters
 

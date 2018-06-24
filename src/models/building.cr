@@ -1,4 +1,4 @@
-class Building < Granite::ORM::Base
+class Building < Granite::Base
   adapter pg
   table_name buildings
 
