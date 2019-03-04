@@ -1,0 +1,13 @@
+name: nocturne
+version: 0.1.0
+
+authors:
+  - freyamade
+
+targets:
+  nocturne:
+    main: src/nocturne.cr
+
+crystal: 0.27.2
+
+license: MIT

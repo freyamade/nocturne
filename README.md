@@ -1,17 +1,8 @@
 # Nocturne v2
 Nocturne v2 will be powered by the following stack;
 
-## Backend
-- Crystal
-    - REST API
-    - GraphQL API
-
-Looking at Onyx instead of Amber because of Onyx::REST and the chance of it being a lot less bloated >.>
-[Awesome Crystal Web Frameworks](https://github.com/veelenga/awesome-crystal#web-frameworks)
-
-Currently looking at;
-- Onyx
-- Amber
+## Backend Stack
+- Crystal REST / GraphQL API
 
 ## Frontend
 - Vue.js
