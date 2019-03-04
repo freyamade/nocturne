@@ -1,4 +1,5 @@
 require "onyx/rest"
+require "../views/**"
 
 module Nocturne
   module Actions
@@ -6,7 +7,7 @@ module Nocturne
       include Onyx::REST::Action
 
       def call
-        context.response << "Hello, Onyx!"
+        return Views::Hello.new "Onyx"
       end
     end
   end
