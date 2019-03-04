@@ -2,6 +2,7 @@ require "onyx/rest"
 require "../views/**"
 
 module Nocturne
+  # Actions are used to isolate the business logic away from rendering and the server code
   module Actions
     struct Hello
       include Onyx::REST::Action
