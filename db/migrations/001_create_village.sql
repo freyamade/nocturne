@@ -1,9 +1,7 @@
 -- +migrate up
 CREATE TABLE villages (
   id             SERIAL    PRIMARY KEY,
-  name           VARCHAR   NOT NULL,
-  created_at     TIMESTAMP NOT NULL DEFAULT NOW(),
-  updated_at     TIMESTAMP
+  name           VARCHAR   NOT NULL
 );
 
 CREATE INDEX villages_name ON villages (name);
