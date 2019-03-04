@@ -1,3 +1,4 @@
+require "onyx/env"
 require "onyx/rest"
 require "./actions/**"
 require "./views/**"
