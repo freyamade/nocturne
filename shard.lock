@@ -4,6 +4,10 @@ shards:
     github: vladfaust/callbacks.cr
     version: 0.2.0
 
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.5.1
+
   dotenv:
     github: gdotdesign/cr-dotenv
     version: 0.1.0
@@ -11,6 +15,10 @@ shards:
   http-params-serializable:
     github: vladfaust/http-params-serializable
     version: 0.3.0
+
+  migrate:
+    github: vladfaust/migrate.cr
+    version: 0.4.1
 
   onyx:
     github: onyxframework/onyx
@@ -23,6 +31,14 @@ shards:
   onyx-rest:
     github: onyxframework/rest
     version: 0.6.3
+
+  onyx-sql:
+    github: onyxframework/sql
+    version: 0.6.2
+
+  pg:
+    github: will/crystal-pg
+    version: 0.15.0
 
   radix:
     github: luislavena/radix
