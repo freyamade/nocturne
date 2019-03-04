@@ -4,6 +4,14 @@ version: 0.1.0
 authors:
   - freyamade
 
+dependencies:
+  onyx:
+    github: onyxframework/onyx
+    version: ~> 0.1.2
+  onyx-rest:
+    github: onyxframework/rest
+    version: 0.6.3
+
 targets:
   nocturne:
     main: src/nocturne.cr
